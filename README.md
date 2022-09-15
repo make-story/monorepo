@@ -136,3 +136,61 @@ $ yarn workspace pack-a add react-router-dom
 ```
 
 pack-a에 node_modules 디렉토리가 생기며 안에 react-router-dom 패키지가 있는 것 을 확인
+
+# 개별 프로젝트의 스크립트 실행 프로젝트의 스크립트는 yarn workspace 프로젝트명 스크립트를 통해 실행
+
+```
+$ yarn workspace pack-a [scripts 명령]
+```
+
+---
+
+# eslint 설정
+
+각 프로젝트별 tsconfig.json 설정을 따르기 위해 setting/overriders에 프로젝트별 설정이 필요  
+eslintrc.js
+
+```javascript
+{
+  files: [
+    'packages/디렉토리명/**/*.ts?(x)',
+    'packages/디렉토리명/**/*.js?(x)',
+  ],
+  settings: {
+    'import/resolver': {
+      typescript: {
+        project: path.resolve(
+          // tsconfig.json 경로
+        ),
+      },
+    },
+  },
+},
+```
+
+# tsconfig 설정
+
+```javascript
+{
+  "references": [
+    {
+      "path": "packages/프로젝트"
+    },
+    {
+      "path": "packages/프로젝트"
+    },
+  ],
+  "compilerOptions": {
+    "composite": true,
+    "declaration": true,
+  }
+}
+```
+
+## 프로젝트 내부에서 상위 tsconfig 참조해야할 경우
+
+```javascript
+{
+  "extends": "../../tsconfig.json",
+}
+```
