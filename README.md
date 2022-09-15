@@ -10,6 +10,8 @@ https://github.com/kowoohyuk/monorepo-template
 
 ---
 
+# 용어
+
 - project
   - = 저장소
   - 하나 이상의 worktree 포함
