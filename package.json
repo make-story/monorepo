@@ -1,0 +1,18 @@
+{
+  "name": "monorepo.git",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/make-story/monorepo.git",
+  "author": "Sung-min Yu <yu9221@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/**"
+    ],
+    "nohoist": [
+      "**/react-router-dom",
+      "**/react-router-dom/**"
+    ]
+  }
+}
