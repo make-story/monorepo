@@ -10,7 +10,13 @@ https://github.com/kowoohyuk/monorepo-template
 
 ---
 
-# 용어
+# Yarn
+
+`Yarn(1.x) 또는 npm(7.x)`의 workspaces 필드를 사용해 간단히 모노레포를 구성할 수 있다.  
+yarn link 또는 npm link 기능을 선언적으로 사용하는 것으로 node_modules 디렉터리에 workspace에 대한 심볼릭 링크가 생성된다.  
+이를 통해 하나의 저장소에 있는 여러 프로젝트가 서로 쉽게 상호 참조할 수 있다.
+
+## 용어
 
 - project
   - = 저장소
@@ -27,15 +33,14 @@ Yarn Berry는 yarn의 두 번째 버전으로, 2018년 9월 yarn의 RFC 저장�
 Yarn 1.x의 주요 개발자인 Mael Nison에 의해 TypeScript로 개발되었고 2020년 1월 25일 정식 버전이 출시되었다.  
 Yarn 1.x는 v1.22.17에서 코드 프리징되었고 https://github.com/yarnpkg/berry 에서 2022.03.09 현재 v3.2.0이 출시되었다.
 
----
 
-# package.json 생성
+## package.json 생성
 
 ```
 $ yarn init -y
 ```
 
-# workspaces 활성화
+## workspaces 활성화
 
 package.json
 
@@ -56,7 +61,7 @@ package.json
 }
 ```
 
-# 루트 디렉토리에서 packages 디렉토리 생성 후, 그 안에 pack-a 와 pack-b 패키지를 생성
+## 루트 디렉토리에서 packages 디렉토리 생성 후, 그 안에 pack-a 와 pack-b 패키지를 생성
 
 ```
 $ mkdir packages packages/pack-a packages/pack-b
@@ -66,27 +71,27 @@ $ cd ../pack-b
 $ yarn init -y
 ```
 
-# yarn workspace 에서 패키지 추가를 위해서는 기존 yarn add [패키지 이름]이 아닌, 다른 방법 사용
+## yarn workspace 에서 패키지 추가를 위해서는 기존 yarn add [패키지 이름]이 아닌, 다른 방법 사용
 
-## pack-a 에 패키지 추가
+### pack-a 에 패키지 추가
 
 ```
 $ yarn workspace pack-a add [패키지 이름]
 ```
 
-## pack-a 에 패키지 삭제
+### pack-a 에 패키지 삭제
 
 ```
 $ yarn workspace pack-a remove [패키지 이름]
 ```
 
-## 루트 디렉토리에 패키지 추가
+### 루트 디렉토리에 패키지 추가
 
 ```
 $ yarn add [패키지 이름] -W
 ```
 
-# yarn workspaces 의 호이스팅 방식 예
+## yarn workspaces 의 호이스팅 방식 예
 
 root 위치
 
@@ -99,12 +104,12 @@ $ yarn workspace pack-b add react
 root 의 node_modules 폴더에 react 패키지가 설치된 것을 볼 수 있다.
 (pack-a, pack-b의 node_modules 디렉토리에 추가되는 것이 아니라 루트 경로의 node_modules 연결됨)
 
-# 모든 패키지가 yarn workspaces 의 호이스팅 방식을 지원하는 것은 아님
+## 모든 패키지가 yarn workspaces 의 호이스팅 방식을 지원하는 것은 아님
 
 이를 해결하기 위해서는 nohoist를 사용  
 nohoist 항목에 추가된 패키지는 호이스팅 되지 않고 각각의 프로젝트 또는 패키지의 node_modules에 추가
 
-## nohoist 테스트를 위하여 react-router-dom 패키지를 호이스팅되지 않게 추가
+### nohoist 테스트를 위하여 react-router-dom 패키지를 호이스팅되지 않게 추가
 
 package.json에 다음과 같이 nohoist 항목을 추가
 
@@ -137,7 +142,7 @@ $ yarn workspace pack-a add react-router-dom
 
 pack-a에 node_modules 디렉토리가 생기며 안에 react-router-dom 패키지가 있는 것 을 확인
 
-# 개별 프로젝트의 스크립트 실행 프로젝트의 스크립트는 yarn workspace 프로젝트명 스크립트를 통해 실행
+## 개별 프로젝트의 스크립트 실행 프로젝트의 스크립트는 yarn workspace 프로젝트명 스크립트를 통해 실행
 
 ```
 $ yarn workspace pack-a [scripts 명령]
@@ -145,7 +150,7 @@ $ yarn workspace pack-a [scripts 명령]
 
 ---
 
-# eslint 설정
+## eslint 설정
 
 각 프로젝트별 tsconfig.json 설정을 따르기 위해 setting/overriders에 프로젝트별 설정이 필요  
 eslintrc.js
@@ -168,7 +173,7 @@ eslintrc.js
 },
 ```
 
-# tsconfig 설정
+## tsconfig 설정
 
 ```javascript
 {
@@ -187,7 +192,7 @@ eslintrc.js
 }
 ```
 
-## 프로젝트 내부에서 상위 tsconfig 참조해야할 경우
+### 프로젝트 내부에서 상위 tsconfig 참조해야할 경우
 
 ```javascript
 {
