@@ -1,5 +1,5 @@
 {
-  "name": "monorepo.git",
+  "name": "@monorepo",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/make-story/monorepo.git",
