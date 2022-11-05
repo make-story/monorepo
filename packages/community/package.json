@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-
+    "monorepo-common": "1.0.0"
   },
   "devDependencies": {
 
