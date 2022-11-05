@@ -1,5 +1,5 @@
 {
-  "name": "@monorepo/mall",
+  "name": "monorepo-mall",
   "packageManager": "yarn@3.1.1",
   "version": "1.0.0",
   "description": "",
