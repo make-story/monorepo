@@ -10,10 +10,7 @@
     "packages": [
       "packages/**"
     ],
-    "nohoist": [
-      "**/react-router-dom",
-      "**/react-router-dom/**"
-    ]
+    "nohoist": []
   },
   "scripts": {
     "dev:mall": "yarn workspace monorepo-mall dev"
