@@ -6,7 +6,7 @@ const withTM = require("next-transpile-modules")(["monorepo-common"]);
 const isDev = process.env.NODE_ENV === "development";
 //dotenv.config({ path: path.join(__dirname, `.envs/.env.${process.env.NODE_ENV}`), silent: true });
 
-module.exports = withPlugins([withTM], {
+const config = {
   //basePath: '/',
   // 웹팩설정
   webpack: (config, { isServer }) => {
@@ -60,4 +60,7 @@ module.exports = withPlugins([withTM], {
     // 스크롤 복원
     scrollRestoration: true,
   },
-});
+};
+
+module.exports = config;
+//module.exports = withPlugins([withTM], config);
