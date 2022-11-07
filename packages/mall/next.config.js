@@ -1,9 +1,9 @@
-const path = require("path");
-const dotenv = require("dotenv");
-const withPlugins = require("next-compose-plugins");
-const withTM = require("next-transpile-modules")(["monorepo-common"]);
+const path = require('path');
+const dotenv = require('dotenv');
+const withPlugins = require('next-compose-plugins');
+const withTM = require('next-transpile-modules')(['monorepo-common']);
 
-const isDev = process.env.NODE_ENV === "development";
+const isDev = process.env.NODE_ENV === 'development';
 //dotenv.config({ path: path.join(__dirname, `.envs/.env.${process.env.NODE_ENV}`), silent: true });
 
 const config = {
@@ -27,7 +27,7 @@ const config = {
       test: /\.(svg)$/,
       use: [
         {
-          loader: "@svgr/webpack",
+          loader: '@svgr/webpack',
           options: {
             svgoConfig: {
               plugins: {
@@ -41,8 +41,8 @@ const config = {
     });
     if (!isServer) {
       config.node = {
-        fs: "empty",
-        "fs-extra": "empty",
+        fs: 'empty',
+        'fs-extra': 'empty',
       };
     }
     return config;
@@ -77,5 +77,5 @@ const config = {
   },
 };
 
-module.exports = config;
-//module.exports = withPlugins([withTM], config);
+//module.exports = config;
+module.exports = withPlugins([withTM], config);
