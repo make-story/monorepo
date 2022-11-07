@@ -3,6 +3,7 @@
     "compilerOptions": {
         "baseUrl": ".",
         "composite": true,
+        "declaration": true,
         "paths": {
             "src/*": [
                 "./src/*"
