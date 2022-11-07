@@ -2,6 +2,7 @@
     "extends": "../../tsconfig.json",
     "compilerOptions": {
         "baseUrl": ".",
+        "composite": true,
         "paths": {
             "src/*": [
                 "./src/*"
@@ -32,6 +33,7 @@
     "exclude": [
         "node_modules",
         ".next",
+        "_next",
         "public",
     ],
     "include": [

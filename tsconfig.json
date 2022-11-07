@@ -19,6 +19,17 @@
     "strict": true,
     "target": "esnext"
   },
+  "references": [
+    {
+      "path": "packages/common"
+    },
+    {
+      "path": "packages/community"
+    },
+    {
+      "path": "packages/mall"
+    },
+  ],
   "exclude": ["node_modules", ".next", "public"],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }
