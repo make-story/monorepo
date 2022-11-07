@@ -8,6 +8,9 @@ const isDev = process.env.NODE_ENV === "development";
 
 const config = {
   //basePath: '/',
+  distDir: '_next',
+  publicRuntimeConfig: {},
+  serverRuntimeConfig: {},
   // 웹팩설정
   webpack: (config, { isServer }) => {
     //config.devtool = 'hidden-source-map'; // 'eval'
@@ -49,12 +52,24 @@ const config = {
   /*async redirects() {
     return [
       {
+        // 해당 URL 접근시
         source: '/main',
+        // 리다이렉트
         destination: '/display/main',
         permanent: true,
       },
     ];
   },*/
+  async rewrites() {
+    return [
+      {
+        // 해당 URL 접근시
+        source: '/my/page/12345',
+        // pages 작동
+        destination: '/my/page/test',
+      },
+    ];
+  },
   //
   experimental: {
     // 스크롤 복원

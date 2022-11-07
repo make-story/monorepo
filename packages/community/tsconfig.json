@@ -6,6 +6,27 @@
             "src/*": [
                 "./src/*"
             ],
+            "common/*": [
+                "../common/src/common/*"
+            ],
+            "utils/*": [
+                "../common/src/common/utils/*"
+            ],
+            "smartBeauty/*": [
+                "../mall/smartBeauty/*"
+            ],
+            "display/*": [
+                "../mall/display/*"
+            ],
+            "customer/*": [
+                "../mall/customer/*"
+            ],
+            "order/*": [
+                "../mall/order/*"
+            ],
+            "product/*": [
+                "../mall/product/*"
+            ]
         },
     },
     "exclude": [
