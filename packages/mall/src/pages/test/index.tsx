@@ -6,6 +6,8 @@ import { wrapper } from 'src/store';
 import { RootState } from 'src/rootReducer';
 import { testActionCreator } from 'src/project/stores/test/action';
 
+import ProjectTest from 'src/project/components/test';
+
 // 테스트 (IOS vh 이슈대응)
 if (typeof window !== 'undefined') {
   // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
@@ -35,7 +37,7 @@ const Page = () => {
     dispatch(testActionCreator.fetchTest());
   }, []);
 
-  return <>TEST</>;
+  return <ProjectTest />;
 };
 
 /**

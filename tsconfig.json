@@ -28,8 +28,8 @@
     },
     {
       "path": "packages/mall"
-    },
+    }
   ],
-  "exclude": ["node_modules", ".next", "public"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+  "exclude": ["node_modules", ".next", "_next", "public"],
+  "include": []
 }
