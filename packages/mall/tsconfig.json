@@ -7,11 +7,11 @@
     "paths": {
       "monorepo-common": ["../../packages/common"],
       "src/*": ["./src/*"],
-      "smartBeauty/*": ["../src/smartBeauty/*"],
-      "display/*": ["../src/display/*"],
-      "customer/*": ["../src/customer/*"],
-      "order/*": ["../src/order/*"],
-      "product/*": ["../src/product/*"]
+      "smartBeauty/*": ["./src/smartBeauty/*"],
+      "display/*": ["./src/display/*"],
+      "customer/*": ["./src/customer/*"],
+      "order/*": ["./src/order/*"],
+      "product/*": ["./src/product/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
