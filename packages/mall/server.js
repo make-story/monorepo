@@ -1,21 +1,21 @@
-const express = require("express");
-const next = require("next");
-const helmet = require("helmet");
-const fs = require("fs");
-const morgan = require("morgan");
-const cookieParser = require("cookie-parser");
-const path = require("path");
-const dotenv = require("dotenv");
-const moment = require("moment-timezone");
-const http = require("http");
-const https = require("https");
+const express = require('express');
+const next = require('next');
+const helmet = require('helmet');
+const fs = require('fs');
+const morgan = require('morgan');
+const cookieParser = require('cookie-parser');
+const path = require('path');
+const dotenv = require('dotenv');
+const moment = require('moment-timezone');
+const http = require('http');
+const https = require('https');
 
-const cors = require("cors");
-const AWSXRay = require("aws-xray-sdk");
-const UAParser = require("ua-parser-js");
+const cors = require('cors');
+const AWSXRay = require('aws-xray-sdk');
+const UAParser = require('ua-parser-js');
 
-const { createServer } = require("http");
-const { parse } = require("url");
+const { createServer } = require('http');
+const { parse } = require('url');
 
 // env 설정
 const envPath = path.join(__dirname, `.envs/.env.${process.env.NODE_ENV}`);
@@ -24,13 +24,13 @@ if (fs.existsSync(envPath)) {
 } else {
   //process.exit();
 }
-const dev = process.env.NODE_ENV !== "production";
-const hostname = "localhost";
+const dev = process.env.NODE_ENV !== 'production';
+const hostname = 'localhost';
 const port = process.env.PORT || 3000;
 
 // node 예외처리
-process.on("uncaughtException", (error) => {
-  console.log("uncaughtException ", error);
+process.on('uncaughtException', error => {
+  console.log('uncaughtException ', error);
 });
 
 const corsOptions = {
@@ -50,36 +50,36 @@ app.prepare().then(() => {
   server.use(express.json()); // json request body 파싱
   server.use(express.urlencoded({ extended: true }));
   server.use(cookieParser()); // process.env.COOKIE_SECRET
-  server.use(express.static(path.join(__dirname, "public"))); // public 정적 경로
+  server.use(express.static(path.join(__dirname, 'public'))); // public 정적 경로
   /*server.use('/', function (req, res, next) { // HTTP 호출 미들웨어 기능적 요소 주입 
     return next();
   });*/
 
-  server.get("/", function (req, res, next) {
+  server.get('/', function (req, res, next) {
     //console.log('originalUrl', req.originalUrl);
     //console.log('path', req.path);
     //console.log('params', req.params);
 
     const { page } = req.params || {};
-    const { host = "" } = req.headers || {};
+    const { host = '' } = req.headers || {};
 
     const parsedUrl = parse(req.url, true);
     const { pathname, query } = parsedUrl;
 
-    return res.redirect("/test");
+    return res.redirect('/test');
   });
   /*server.get('/', function (req, res, next) {
         return res.redirect('/main');
   });*/
-  server.get("*", (req, res) => {
+  server.get('*', (req, res) => {
     return handle(req, res);
   });
-  server.post("*", (req, res) => {
+  server.post('*', (req, res) => {
     return handle(req, res);
   });
 
   // http
-  server.listen(port, (err) => {
+  server.listen(port, err => {
     if (err) throw err;
     console.log(`> Ready on http://localhost:${port}`);
   });
