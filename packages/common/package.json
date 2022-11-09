@@ -5,7 +5,11 @@
   "description": "프로젝트 공통 코드",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:typescript": "tsc"
+  },
+  "publishConfig": {
+    "registry": ""
   },
   "dependencies": {
     "@lottiefiles/lottie-player": "1.0.3",
