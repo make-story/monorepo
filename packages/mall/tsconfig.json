@@ -11,7 +11,8 @@
       "display/*": ["./src/display/*"],
       "customer/*": ["./src/customer/*"],
       "order/*": ["./src/order/*"],
-      "product/*": ["./src/product/*"]
+      "product/*": ["./src/product/*"],
+      "o2o/*": ["./src/o2o/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
