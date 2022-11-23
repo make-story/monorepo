@@ -1,5 +1,5 @@
 {
-  "name": "monorepo-community",
+  "name": "@makeapi/community",
   "packageManager": "yarn@3.1.1",
   "version": "1.0.0",
   "description": "",
@@ -8,9 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "monorepo-common": "1.0.0"
+    "@makeapi/common": "1.0.0"
   },
-  "devDependencies": {
-
-  }
+  "devDependencies": {}
 }

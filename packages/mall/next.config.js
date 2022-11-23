@@ -1,7 +1,7 @@
 const path = require('path');
 const dotenv = require('dotenv');
 const withPlugins = require('next-compose-plugins');
-const withTM = require('next-transpile-modules')(['monorepo-common']);
+const withTM = require('next-transpile-modules')(['@makeapi/common']);
 
 const isDev = process.env.NODE_ENV === 'development';
 //dotenv.config({ path: path.join(__dirname, `.envs/.env.${process.env.NODE_ENV}`), silent: true });

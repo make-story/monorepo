@@ -1,5 +1,5 @@
 {
-  "name": "monorepo-mall",
+  "name": "@makeapi/mall",
   "packageManager": "yarn@3.1.1",
   "version": "1.0.0",
   "description": "",
@@ -95,6 +95,6 @@
     "winston-daily-rotate-file": "4.5.2"
   },
   "devDependencies": {
-    "monorepo-common": "1.0.0"
+    "@makeapi/common": "1.0.0"
   }
 }

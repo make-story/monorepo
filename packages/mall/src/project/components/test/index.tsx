@@ -3,7 +3,7 @@
  */
 import React, { useEffect } from 'react';
 
-import CommonTest from 'monorepo-common/components/test';
+import CommonTest from '@makeapi/common/components/test';
 
 export default function Test() {
   return <CommonTest />;

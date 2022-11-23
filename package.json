@@ -1,11 +1,11 @@
 {
-  "name": "monorepo",
+  "name": "@makeapi/monorepo",
   "packageManager": "yarn@3.1.1",
   "version": "1.0.0",
+  "description": "모노레포",
   "main": "index.js",
-  "repository": "https://github.com/make-story/monorepo.git",
-  "author": "Sung-min Yu <yu9221@gmail.com>",
   "private": true,
+  "author": "Sung-min Yu <yu9221@gmail.com>",
   "workspaces": {
     "packages": [
       "packages/**"
@@ -13,7 +13,7 @@
     "nohoist": []
   },
   "scripts": {
-    "dev:mall": "yarn workspace monorepo-mall dev"
+    "dev:mall": "yarn workspace @makeapi/mall dev"
   },
   "dependencies": {
     "@babel/core": "7.12.10",
