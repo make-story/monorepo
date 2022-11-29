@@ -17,6 +17,8 @@ const UAParser = require('ua-parser-js');
 const { createServer } = require('http');
 const { parse } = require('url');
 
+const common = require('../common/server');
+
 // env 설정
 const envPath = path.join(__dirname, `.envs/.env.${process.env.NODE_ENV}`);
 if (fs.existsSync(envPath)) {
