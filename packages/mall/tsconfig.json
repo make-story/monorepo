@@ -5,8 +5,8 @@
     "composite": true,
     "declaration": true,
     "paths": {
-      "src/*": ["./src/*"],
-      "display/*": ["./src/display/*"]
+      "common/*": ["../common/*"],
+      "display/*": ["./src/display/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
