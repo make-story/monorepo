@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
-    "@makeapi/pack-a": "1.0.0",
+    "@makeapi/pack-a": "workspace:*",
     "react": "^18.2.0"
   }
 }

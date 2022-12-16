@@ -95,6 +95,6 @@
     "winston-daily-rotate-file": "4.5.2"
   },
   "devDependencies": {
-    "@makeapi/common": "1.0.0"
+    "@makeapi/common": "workspace:*"
   }
 }
