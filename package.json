@@ -14,7 +14,8 @@
   },
   "scripts": {
     "echo": "$ yarn <프로젝트명> <해당 프로젝트 package.json 파일 scripts 항목에 설정된 명령>",
-    "mall": "yarn workspace @makeapi/mall"
+    "mall": "yarn workspace @makeapi/mall",
+    "community": "yarn workspace @makeapi/community"
   },
   "dependencies": {
     "@babel/core": "7.12.10",
