@@ -2,11 +2,13 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".",
+    "rootDir": "src",
     "composite": true,
     "declaration": true,
     "paths": {
       "common/*": ["../common/*"],
       "display/*": ["./src/display/*"]
     }
-  }
+  },
+  "references": [{ "path": "../common" }]
 }
