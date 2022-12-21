@@ -8,5 +8,10 @@
       "common/*": ["../common/*"],
       "display/*": ["./src/display/*"]
     }
-  }
+  },
+  "references": [
+    {
+      "path": "../common"
+    }
+  ]
 }
