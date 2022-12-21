@@ -30,6 +30,6 @@
       "path": "packages/mall"
     }
   ],
-  "exclude": ["node_modules", ".next", "_next", "public"],
-  "include": []
+  "exclude": ["**/node_modules", "**/.next", "**/_next", "**/public"],
+  "include": ["**/next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }

@@ -6,8 +6,7 @@
     "declaration": true,
     "paths": {
       "common/*": ["../common/*"],
-      "display/*": ["./src/display/*"],
+      "display/*": ["./src/display/*"]
     }
-  },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+  }
 }
