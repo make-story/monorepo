@@ -24,9 +24,6 @@
       "path": "packages/common"
     },
     {
-      "path": "packages/community"
-    },
-    {
       "path": "packages/mall"
     }
   ],

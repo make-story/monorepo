@@ -8,7 +8,7 @@
   "author": "Sung-min Yu <yu9221@gmail.com>",
   "workspaces": {
     "packages": [
-      "packages/**"
+      "packages/*"
     ],
     "nohoist": []
   },
