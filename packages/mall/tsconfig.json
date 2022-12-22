@@ -10,5 +10,7 @@
       "display/*": ["./src/display/*"]
     }
   },
-  "references": [{ "path": "../common" }]
+  "references": [{ "path": "../common" }],
+  "exclude": ["node_modules", ".next", "_next", "public"],
+  "include": ["**/next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }
