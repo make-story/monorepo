@@ -14,16 +14,13 @@
   },
   "scripts": {
     "echo": "$ yarn <프로젝트명> <해당 프로젝트 package.json 파일 scripts 항목에 설정된 명령>",
-    "type-check": "tsc --noemit",
-    "eslint-check": "eslint '*/**/*.{js,ts,tsx}' --quiet",
+    "tsc": "tsc --noemit",
+    "eslint": "eslint '*/**/*.{js,ts,tsx}' --quiet",
     "mall": "yarn workspace @makeapi/mall",
     "community": "yarn workspace @makeapi/community"
   },
   "dependencies": {
     "@babel/core": "7.12.10",
-    "@types/node": "^14.14.43",
-    "@types/react": "17.0.0",
-    "@types/react-dom": "17.0.8",
     "@typescript-eslint/eslint-plugin": "4.11.1",
     "@typescript-eslint/parser": "4.11.1",
     "babel-plugin-module-resolver": "4.1.0",
