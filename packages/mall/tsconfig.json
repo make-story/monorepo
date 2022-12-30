@@ -5,12 +5,12 @@
     "rootDir": "../",
     "composite": true,
     "declaration": true,
+    "noEmit": true,
     "paths": {
       "common/*": ["../common/*"],
       "display/*": ["./src/display/*"]
     }
   },
-  "references": [{ "path": "../common" }],
   "exclude": ["node_modules", ".next", "_next", "public"],
   "include": ["**/next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }

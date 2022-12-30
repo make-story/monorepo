@@ -6,7 +6,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "cross-env NODE_ENV=${NODE_ENV:=development} PORT=80 PORT_SSL=443 node --inspect=9191 server.js"
+    "dev": "cross-env NODE_ENV=${NODE_ENV:=development} PORT=80 PORT_SSL=443 node --inspect=9191 server.js",
+    "build": "cross-env next build"
   },
   "dependencies": {
     "@babel/core": "7.12.10",
