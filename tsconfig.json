@@ -25,5 +25,7 @@
     {
       "path": "packages/mall"
     }
-  ]
+  ],
+  "exclude": ["packages/**/dist/**"],
+  "include": []
 }
