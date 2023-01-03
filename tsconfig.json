@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "rootDir": "./packages",
     "allowJs": true,
     "alwaysStrict": true,
     "esModuleInterop": true,
@@ -20,10 +21,10 @@
   },
   "references": [
     {
-      "path": "packages/common"
+      "path": "./packages/common"
     },
     {
-      "path": "packages/mall"
+      "path": "./packages/mall"
     }
   ],
   "exclude": ["packages/**/dist/**"],
