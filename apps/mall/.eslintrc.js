@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+  root: true,
   env: {
     browser: true,
     commonjs: true,
@@ -79,36 +80,6 @@ module.exports = {
       files: ['**/*.tsx'],
       rules: {
         'react/prop-types': 'off',
-      },
-    },
-    {
-      files: ['packages/common/**/*.ts?(x)', 'packages/common/**/*.js?(x)'],
-      settings: {
-        'import/resolver': {
-          typescript: {
-            project: path.resolve(`${__dirname}/packages/common/tsconfig.json`),
-          },
-        },
-      },
-    },
-    {
-      files: ['packages/community/**/*.ts?(x)', 'packages/community/**/*.js?(x)'],
-      settings: {
-        'import/resolver': {
-          typescript: {
-            project: path.resolve(`${__dirname}/packages/community/tsconfig.json`),
-          },
-        },
-      },
-    },
-    {
-      files: ['packages/mall/**/*.ts?(x)', 'packages/mall/**/*.js?(x)'],
-      settings: {
-        'import/resolver': {
-          typescript: {
-            project: path.resolve(`${__dirname}/packages/mall/tsconfig.json`),
-          },
-        },
       },
     },
   ],

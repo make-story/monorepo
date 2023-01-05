@@ -7,15 +7,10 @@
     "module": "esnext",
     "jsx": "preserve",
     "incremental": true,
-    "noEmit": false,
     "paths": {
-
+      "src/*": ["./src/*"]
     }
   },
   "exclude": ["node_modules", ".next", "_next", "public"],
-  "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    "**/*.js",
-  ]
+  "include": []
 }

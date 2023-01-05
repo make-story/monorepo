@@ -1,10 +1,10 @@
 {
   "name": "@makeapi/monorepo",
+  "private": true,
   "packageManager": "yarn@3.1.1",
   "version": "1.0.0",
   "description": "모노레포",
   "main": "index.js",
-  "private": true,
   "author": "Sung-min Yu <yu9221@gmail.com>",
   "workspaces": {
     "packages": [
@@ -14,8 +14,10 @@
   },
   "scripts": {
     "echo": "$ yarn <프로젝트명> <해당 프로젝트 package.json 파일 scripts 항목에 설정된 명령>",
-    "tsc": "tsc --noemit",
-    "eslint": "eslint '*/**/*.{js,ts,tsx}' --quiet",
+    "lint": "yarn workspaces foreach -ptv run lint --color",
+    "typecheck": "yarn workspaces foreach -ptv run typecheck",
+    "packages:lint": "yarn workspaces foreach -ptv --include '@makeapi/*' run lint",
+    "packages:typecheck": "yarn workspaces foreach -ptv --include '@makeapi/*' run typecheck",
     "mall": "yarn workspace @makeapi/mall",
     "community": "yarn workspace @makeapi/community"
   },
