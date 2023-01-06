@@ -17,6 +17,9 @@ const UAParser = require('ua-parser-js');
 const { createServer } = require('http');
 const { parse } = require('url');
 
+const { TEST } = require('@makeapi/nodejs');
+console.log('TEST', TEST);
+
 // env 설정
 const envPath = path.join(__dirname, `.envs/.env.${process.env.NODE_ENV}`);
 if (fs.existsSync(envPath)) {
