@@ -11,7 +11,9 @@
       "apps/*",
       "packages/*"
     ],
-    "nohoist": []
+    "nohoist": [
+      "**"
+    ]
   },
   "scripts": {
     "echo": "$ yarn <프로젝트명> <해당 프로젝트 package.json 파일 scripts 항목에 설정된 명령>",
