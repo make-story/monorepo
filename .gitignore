@@ -20,7 +20,7 @@ _next
 .DS_Store
 *.pem
 .idea
-.vscode
+#.vscode
 .quokka
 
 # debug
