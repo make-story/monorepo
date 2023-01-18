@@ -11,9 +11,7 @@
       "apps/*",
       "packages/*"
     ],
-    "nohoist": [
-      "**"
-    ]
+    "nohoist": []
   },
   "scripts": {
     "echo": "$ yarn <프로젝트명> <해당 프로젝트 package.json 파일 scripts 항목에 설정된 명령>",
@@ -50,6 +48,7 @@
     "eslint-plugin-prettier": "^3.3.0",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "prettier": "^2.5.1"
+    "prettier": "^2.5.1",
+    "turbo": "^1.6.3"
   }
 }
