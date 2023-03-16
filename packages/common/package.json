@@ -12,6 +12,10 @@
     "registry": ""
   },
   "dependencies": {
+    "@babel/core": "^7.12.10",
+    "@types/node": "^14.14.43",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.8",
     "@lottiefiles/lottie-player": "1.0.3",
     "@types/app-root-path": "1.2.4",
     "@types/classnames": "2.2.11",
@@ -42,18 +46,21 @@
     "url-search-params-polyfill": "8.1.1",
     "use-query-params": "^1.2.3",
     "winston": "3.3.3",
-    "winston-daily-rotate-file": "4.5.2"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.12.10",
-    "@types/node": "^14.14.43",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.8",
-    "babel-plugin-module-resolver": "^4.1.0",
+    "winston-daily-rotate-file": "4.5.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "redux": "4.0.5",
     "redux-saga": "1.1.3",
-    "typescript": "4.1.3"
+    "typescript": "4.1.3",
+    "babel-plugin-module-resolver": "^4.1.0"
+  },
+  "devDependencies": {},
+  "peerDependencies": {
+    "@reduxjs/toolkit": "^1.8.3",
+    "next-redux-wrapper": "^7.0.5",
+    "next": "10.0.7",
+    "react-dom": "16.13.1",
+    "react-redux": "7.2.8",
+    "react": "16.13.1"
   }
 }

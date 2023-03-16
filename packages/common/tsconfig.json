@@ -1,21 +1,26 @@
 {
-  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
+    "allowJs": true,
+    "alwaysStrict": true,
     "baseUrl": ".",
-    "target": "esnext",
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
     "lib": ["dom", "dom.iterable", "esnext"],
     "module": "esnext",
-    "jsx": "preserve",
-    "incremental": true,
-    "noEmit": false,
-    "paths": {
-
-    }
+    "moduleResolution": "node",
+    "noEmit": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "esnext",
+    "paths": {}
   },
   "exclude": ["node_modules", ".next", "_next", "public"],
-  "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    "**/*.js",
-  ]
+  "include": ["**/*.ts", "**/*.tsx", "**/*.js"]
 }
