@@ -17,9 +17,10 @@
  */
 import { Task } from 'redux-saga';
 import { GetServerSidePropsContext as _GetServerSidePropsContext, GetServerSidePropsResult } from 'next';
-import { TApiManager } from './apiManager';
 import { ToolkitStore } from '@reduxjs/toolkit/dist/configureStore';
 import { Store } from '@reduxjs/toolkit';
+
+import { TApiManager } from './apiManager';
 import { TRootStateCommon } from './reducer';
 
 export declare global {
