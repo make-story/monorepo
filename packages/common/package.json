@@ -8,6 +8,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:typescript": "tsc"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "publishConfig": {
     "registry": ""
   },
