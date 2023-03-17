@@ -1,5 +1,5 @@
 /**
- * 공통으로 사용할 declare 선언
+ * 애플리케이션('apps/') 또는 패키지('/packages') 공통으로 사용할 declare 선언
  *
  * -
  * package.json 에 타입정의 사용중이라는 것을 명시
