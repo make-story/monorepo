@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SVC_PATH=/data/app
-CD_PATH=/data/codedeploy
+CD_PATH=/data/codedeploy/apps/mall
 
 cd ${CD_PATH}
 
