@@ -23,6 +23,9 @@ import { Store } from '@reduxjs/toolkit';
 import { TApiManager } from './apiManager';
 import { TRootStateCommon } from './reducer';
 
+import './types/global';
+import './types/polyfills';
+
 export declare global {
   declare module '*.svg' {
     import * as React from 'react';
