@@ -23,6 +23,7 @@
     "@lottiefiles/lottie-player": "1.0.3",
     "@types/app-root-path": "1.2.4",
     "@types/classnames": "2.2.11",
+    "@types/js-sha512": "0.8.0",
     "@types/lodash": "4.14.166",
     "@types/styled-components": "^5.1.7",
     "@types/ua-parser-js": "^0.7.36",
