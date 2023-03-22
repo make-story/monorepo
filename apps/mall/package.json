@@ -100,7 +100,7 @@
     "winston-daily-rotate-file": "4.5.2"
   },
   "devDependencies": {
-    "@makeapi/common": "latest",
+    "@makeapi/common": "*",
     "@makeapi/nodejs": "*"
   }
 }
