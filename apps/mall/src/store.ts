@@ -1,18 +1,11 @@
-import { Store, configureStore, Reducer } from '@reduxjs/toolkit';
+import { configureStore, Reducer } from '@reduxjs/toolkit';
 import createSagaMiddleware, { Task } from 'redux-saga';
 import { createWrapper, Context, _GetServersidePropsCallback, GetServerSidePropsContext } from 'next-redux-wrapper';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import produce from 'immer';
-import _omit from 'lodash/omit';
 
 import createApiManagerServerSide from '@makeapi/common/apiManager/serverSide';
 import { injectAxiosMiddleware } from '@makeapi/common/apiManager/reduxMiddlewares';
 import rootReducer, { TypedRootState } from './rootReducer';
 import rootSaga from './rootSaga';
-
-export interface SagaStore extends Store {
-  sagaTask?: Task;
-}
 
 /**
  * 스토어 생성
@@ -57,10 +50,12 @@ const makeStore = (context: Context) => {
         .concat([injectAxiosMiddleware, sagaMiddleware]),
   });
   // 3: Run your sagas on server
-  (store as SagaStore).sagaTask = sagaMiddleware.run(rootSaga);
+  store.sagaTask = sagaMiddleware.run(rootSaga);
   // 4: now return the store:
   return store;
 };
+
+export type AppStore = ReturnType<typeof makeStore>;
 
 /**
  * getServerSideProps에 공통로직 추가
@@ -75,10 +70,10 @@ const createWrapperWithCommonLogic = () => {
   });
 
   const getServerSideProps = <P extends {} = any, Strict extends boolean = false>(
-    callback: _GetServersidePropsCallback<ReturnType<typeof makeStore>, P, Strict>,
+    callback: _GetServersidePropsCallback<AppStore, P, Strict>,
   ) => {
     return wrapper.getServerSideProps(store => async _context => {
-      const context: GetServerSidePropsContext = {
+      const context: GetServerSidePropsContext<AppStore> = {
         ..._context,
         store,
         apiManager: await createApiManagerServerSide({ ..._context, store }),
@@ -98,3 +93,8 @@ const createWrapperWithCommonLogic = () => {
 };
 
 export const wrapper = createWrapperWithCommonLogic();
+
+/** @deprecated 가능하면 사용하지 말것. */
+export type SagaStore = {
+  sagaTask?: any;
+};
