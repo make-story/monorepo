@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useDispatch, useSelector } from 'react-redux';
+import { GetServerSidePropsContext } from 'next-redux-wrapper';
 
-import { wrapper } from 'src/store';
+import { wrapper, AppStore } from 'src/store';
 import { RootState } from 'src/rootReducer';
 import { displayActionCreator } from 'src/project/stores/display/action';
 
@@ -43,7 +44,7 @@ const Page = () => {
 /**
  * 서버사이드 데이터 호출
  */
-export const getServerSideProps = wrapper.getServerSideProps(async context => {
+export const getServerSideProps = wrapper.getServerSideProps(async (context: GetServerSidePropsContext<AppStore>) => {
   const { store, req, res, params, query /* URL ?a=b 파라미터값 */ } = context;
   const { headers } = req;
 

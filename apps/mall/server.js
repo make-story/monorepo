@@ -139,7 +139,7 @@ app.prepare().then(() => {
   });*/
 
   // https (로컬에서만 설정)
-  if (dev) {
+  /*if (dev) {
     const portSSL = parseInt(process.env.PORT_SSL, 10) || 3443;
     const options = {
       key: fs.readFileSync('cert/localhost-key.pem'),
@@ -150,7 +150,7 @@ app.prepare().then(() => {
       if (err) throw err;
       console.log(`> Ready on https://localhost:${portSSL}`);
     });
-  }
+  }*/
 
   //server.use(AWSXRay.express.closeSegment());
 });
