@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { wrapper } from 'src/store';
 import { RootState } from 'src/rootReducer';
-import { testActionCreator } from 'src/project/stores/test/action';
+import { displayActionCreator } from 'src/project/stores/display/action';
 
 import ProjectTest from 'src/project/components/test';
 
@@ -27,14 +27,14 @@ const Page = () => {
   //const apiManager = useApiManager();
 
   // 전역 상태
-  const data = useSelector(({ test /*각 스토어 - rootReducer.ts 참고*/ }: RootState) => test.data);
+  const data = useSelector(({ display /*각 스토어 - rootReducer.ts 참고*/ }: RootState) => display.data);
 
   useEffect(() => {
     console.log('test page > data', data);
   }, [data, dispatch]);
   useEffect(() => {
     // 데이터 호출
-    dispatch(testActionCreator.fetchTest());
+    dispatch(displayActionCreator.fetchTest());
   }, []);
 
   return <ProjectTest />;

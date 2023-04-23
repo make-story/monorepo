@@ -1,7 +1,7 @@
-import { AnyAction } from 'redux';
+import { AnyAction } from '@reduxjs/toolkit';
 import produce from 'immer';
 
-import { testActionType, testActionCreator } from './action';
+import { displayActionType, displayActionCreator } from './action';
 
 // 타입
 interface IState {
@@ -19,13 +19,13 @@ export default function reducer(state: IState = initialState, action: AnyAction)
 
   switch (type) {
     // 테스트
-    case testActionType.FETCH_TEST_SUCCESS:
-      console.log('test > reducer > FETCH_TEST_SUCCESS', action);
+    case displayActionType.FETCH_DISPLAY_SUCCESS:
+      console.log('display > reducer > FETCH_DISPLAY_SUCCESS', action);
       return produce(state, (draft: { data: any }) => {
         draft.data = payload;
       });
-    case testActionType.FETCH_TEST_FAILURE:
-      console.log('test > reducer > FETCH_TEST_SUCCESS', action);
+    case displayActionType.FETCH_DISPLAY_FAILURE:
+      console.log('display > reducer > FETCH_DISPLAY_SUCCESS', action);
       return state;
 
     default:

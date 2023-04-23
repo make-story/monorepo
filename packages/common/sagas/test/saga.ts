@@ -13,13 +13,13 @@ https://github.com/redux-utilities/flux-standard-action
     error: '사용자값',
 }
 */
-import { AnyAction } from 'redux';
+import { AnyAction } from '@reduxjs/toolkit';
 import { call, delay, put, takeEvery, takeLatest } from 'redux-saga/effects';
 
-import { testActionType, testActionCreator } from 'src/project/stores/test/action';
-import { loadingActionType, loadingActionCreator } from 'src/project/stores/loading/action';
-import * as api from 'src/project/api/test';
-import { IMainContentsNewOfTheMonth } from 'src/project/types/test';
+import { testActionType, testActionCreator } from '../../stores/test/action';
+import { loadingActionType, loadingActionCreator } from '../..//stores/loading/action';
+import * as api from '../../api/test';
+import { IMainContentsNewOfTheMonth } from '../../types/test';
 
 // 이달의 신상 썸네일형
 function* fetchTest(action: AnyAction) {

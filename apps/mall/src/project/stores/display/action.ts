@@ -16,32 +16,26 @@ https://github.com/redux-utilities/flux-standard-action
 실행 단계
 액션생성(createAction) -> 액션실행(dispatch) -> 미들웨어(redux-saga) -> 리듀서(handleActions)
 */
-// 액션 타입
-const START_LOADING = 'START_LOADING';
-const FINISH_LOADING = 'FINISH_LOADING';
+// 액션 타입 - 값을 '경로/액션타입값' 형태로 주는 이유는, 다른 Action type과 키값이 중복되는 것을 방지하고자 하는 것 (Saga 등 미들웨어에서 값이 동일한 Type 값 실행가능성 제거)
+const FETCH_DISPLAY = 'display/FETCH_DISPLAY';
+const FETCH_DISPLAY_SUCCESS = 'display/FETCH_DISPLAY_SUCCESS';
+const FETCH_DISPLAY_FAILURE = 'display/FETCH_DISPLAY_FAILURE';
 
-export const loadingActionType = {
-  START_LOADING,
-  FINISH_LOADING,
+export const displayActionType = {
+  FETCH_DISPLAY,
+  FETCH_DISPLAY_SUCCESS,
+  FETCH_DISPLAY_FAILURE,
 };
 
 // 액션 생성 함수 - dispatch 로 해당 액션 실행을 위한 구조를 가지고 있음
-const startLoading = (payload: any) => {
-  //console.log('createAction > startLoading', payload);
+const fetchTest = (payload?: any) => {
+  console.log('display > createAction > fetchTest', payload);
   return {
-    type: START_LOADING,
-    payload, // 사용자 값
-  };
-};
-const finishLoading = (payload: any) => {
-  //console.log('createAction > finishLoading', payload);
-  return {
-    type: FINISH_LOADING,
+    type: FETCH_DISPLAY,
     payload, // 사용자 값
   };
 };
 
-export const loadingActionCreator = {
-  startLoading,
-  finishLoading,
+export const displayActionCreator = {
+  fetchTest,
 };

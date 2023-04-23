@@ -1,12 +1,14 @@
 import { all } from 'redux-saga/effects';
 
-// test
-import { watchTestSaga } from './project/sagas/test/saga';
+import { watchTestSaga } from '@makeapi/common/sagas/test/saga';
+import { watchDisplaySaga } from './project/sagas/display/saga';
 
 function* rootSaga() {
   yield all([
-    // test
-    watchTestSaga(),
+    // common
+    watchTestSaga,
+    // display
+    watchDisplaySaga(),
   ]);
 }
 

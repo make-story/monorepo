@@ -13,21 +13,21 @@ https://github.com/redux-utilities/flux-standard-action
     error: '사용자값',
 }
 */
-import { AnyAction } from 'redux';
+import { AnyAction } from '@reduxjs/toolkit';
 import { call, delay, put, takeEvery, takeLatest } from 'redux-saga/effects';
 
-import { testActionType, testActionCreator } from 'src/project/stores/test/action';
-import { loadingActionType, loadingActionCreator } from 'src/project/stores/loading/action';
-import * as api from 'src/project/api/test';
-import { IMainContentsNewOfTheMonth } from 'src/project/types/test';
+import { loadingActionType, loadingActionCreator } from '@makeapi/common/stores/loading/action';
+import { displayActionType, displayActionCreator } from 'src/project/stores/display/action';
+import * as api from 'src/project/api/display/index';
+import { IMainContentsNewOfTheMonth } from 'src/project/types/display/index';
 
 // 이달의 신상 썸네일형
-function* fetchTest(action: AnyAction) {
+function* fetchDisplay(action: AnyAction) {
   const { type, payload, apiManager } = action;
-  console.log('test > saga > fetchTest', action); // createAction 에서 넘어오는 값
+  console.log('display > saga > fetchDisplay', action); // createAction 에서 넘어오는 값
 
   // 로딩 시작
-  yield put(loadingActionCreator.startLoading(testActionType.FETCH_TEST));
+  yield put(loadingActionCreator.startLoading(displayActionType.FETCH_DISPLAY));
 
   try {
     // call(비동기 실행함수, 함꼐 넘길 파라미터 값)
@@ -36,7 +36,7 @@ function* fetchTest(action: AnyAction) {
     // 디스패치
     yield put({
       // createAction 활용해 생성된 액션함수 사용 없이 바로 호출!
-      type: testActionType.FETCH_TEST_SUCCESS, // 액션 타입
+      type: displayActionType.FETCH_DISPLAY_SUCCESS, // 액션 타입
       payload: data, // 응답 데이터 값
       meta: action.payload, // 호출정보
     });
@@ -44,17 +44,17 @@ function* fetchTest(action: AnyAction) {
     // 디스패치
     yield put({
       // createAction 활용해 생성된 액션함수 사용 없이 바로 호출!
-      type: testActionType.FETCH_TEST_FAILURE, // 액션 타입
+      type: displayActionType.FETCH_DISPLAY_FAILURE, // 액션 타입
       payload: e,
       error: true,
     });
   }
 
   // 로딩 끝
-  yield put(loadingActionCreator.finishLoading(testActionType.FETCH_TEST));
+  yield put(loadingActionCreator.finishLoading(displayActionType.FETCH_DISPLAY));
 }
 
 // Saga 미들웨어 - 액션타입 등록
-export function* watchTestSaga() {
-  yield takeLatest(testActionType.FETCH_TEST, fetchTest);
+export function* watchDisplaySaga() {
+  yield takeLatest(displayActionType.FETCH_DISPLAY, fetchDisplay);
 }

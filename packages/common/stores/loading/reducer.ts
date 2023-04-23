@@ -1,4 +1,4 @@
-import { AnyAction } from 'redux';
+import { AnyAction } from '@reduxjs/toolkit';
 import produce from 'immer';
 
 import { loadingActionType, loadingActionCreator } from './action';
