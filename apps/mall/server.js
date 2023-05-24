@@ -75,10 +75,12 @@ app.prepare().then(() => {
   server.use(function (req, res, next) {
     // 응답 타임아웃 설정
     // https://nodejs.org/api/http.html#responsesettimeoutmsecs-callback
-    res.setTimeout(60000, function () {
+    const setTimeoutError = () => {
       console.log(`timed out!!! ${req.url}`);
       res.sendStatus(500).end();
-    });
+    };
+    //req.setTimeout(60000, setTimeoutError);
+    res.setTimeout(60000, setTimeoutError);
     next();
   });
 
