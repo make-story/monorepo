@@ -3,18 +3,18 @@
  * https://code-masterjung.tistory.com/23
  */
 
-const { ApolloServer } = require('@apollo/server');
-const { startStandaloneServer } = require('@apollo/server/standalone');
+import { ApolloServer } from '@apollo/server';
+import { startStandaloneServer } from '@apollo/server/standalone';
 
-const { createApplication } = require('graphql-modules');
-const { modules } = require('./schema/index');
+import { createApplication } from 'graphql-modules';
+import { modules } from './schema/index';
 
 const application = createApplication({
   modules: [modules],
 });
 const server = new ApolloServer({
   typeDefs: application.typeDefs,
-  resolvers,
+  resolvers: [],
 });
 
 (async server => {
