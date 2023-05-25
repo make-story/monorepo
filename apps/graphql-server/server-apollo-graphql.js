@@ -13,7 +13,7 @@ const application = createApplication({
   modules: [modules],
 });
 const server = new ApolloServer({
-  typeDefs: application.schema,
+  typeDefs: application.typeDefs,
   resolvers,
 });
 

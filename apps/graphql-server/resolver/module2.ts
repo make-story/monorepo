@@ -1,4 +1,4 @@
-export const resolver = {
+const resolver = {
   Query: {
     books: () => [
       {
@@ -12,3 +12,5 @@ export const resolver = {
     ],
   },
 };
+
+export default resolver;

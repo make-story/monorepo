@@ -1,4 +1,4 @@
-export const resolver = {
+const resolver = {
   Query: {
     myQuery(root, args, context, info) {
       return {
@@ -7,3 +7,4 @@ export const resolver = {
     },
   },
 };
+export default resolver;
