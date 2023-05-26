@@ -1,5 +1,4 @@
-#graphql
-
+const typeDefs = `#graphql
 # Everything user can read
 type Query {
   file(id: ID!): File # Takes id property as an argument and returns a File
@@ -17,3 +16,6 @@ type Mutation {
     id: ID! # Id of the file to be deleted
   ): File
 }
+`;
+
+export default typeDefs;

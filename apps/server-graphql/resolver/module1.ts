@@ -1,6 +1,6 @@
 const resolver = {
   Query: {
-    myQuery(root, args, context, info) {
+    myQuery() {
       return {
         username: 'jhon',
       };

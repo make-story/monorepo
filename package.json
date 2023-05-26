@@ -20,7 +20,8 @@
     "packages:lint": "yarn workspaces --include '@makeapi/*' run lint",
     "packages:typecheck": "yarn workspaces --include '@makeapi/*' run typecheck",
     "mall": "yarn workspace @makeapi/mall",
-    "graphql-server": "yarn workspace graphql-server"
+    "server-graphql": "yarn workspace server-graphql",
+    "server-json": "yarn workspace server-json"
   },
   "dependencies": {
     "@babel/core": "7.12.10",
