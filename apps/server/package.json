@@ -31,7 +31,6 @@
     "webpack-cli": "^4.9.2"
   },
   "dependencies": {
-    "@skpe/webview-universal": "0.0.1",
     "axios": "^0.27.2",
     "body-parser": "^1.20.0",
     "build-url-ts": "^6.1.3",
