@@ -6,7 +6,7 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "local": "cross-env APP_ENV=dev nodemon --exec ts-node -r tsconfig-paths/register src/index.ts",
+    "local": "cross-env APP_ENV=dev nodemon --exec ts-node -r tsconfig-paths/register server.ts",
     "build:dev": "webpack --mode=none",
     "build:prod": "webpack --mode=production",
     "prebuild:dev": "yarn prebuild",
