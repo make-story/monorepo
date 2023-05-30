@@ -50,6 +50,10 @@ const config = {
     }
     return config;
   },
+  // 외부 종속성 트랜스파일
+  // Next.js 13 버전 이하의 경우 'transpilePackages' 설정이 아닌, 'next-transpile-modules' NPM 패키지 활용해야 한다.
+  // https://nextjs.org/docs/app/api-reference/next-config-js/transpilePackages
+  //transpilePackages: ['@makeapi/common'],
   // 리다이렉트
   // https://nextjs.org/docs/api-reference/next.config.js/redirects
   /*async redirects() {
