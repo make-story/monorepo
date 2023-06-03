@@ -14,7 +14,7 @@ import {
 import { createModule, createApplication, gql } from 'graphql-modules';
 import { startStandaloneServer } from '@apollo/server/standalone';
 import { typeDefs } from './schema/index';
-import { resolvers } from './resolver/index';
+import { resolvers, context } from './resolver/index';
 
 /**
  * express + ApolloServer
@@ -38,7 +38,11 @@ import { resolvers } from './resolver/index';
   const port = isProd && process.env.PORT ? process.env.PORT : 8000;
 
   app.use('/api', bodyParser.json(), (request: Request, response: Response, next: NextFunction): any => {
-    return expressMiddleware(apolloServer)(request, response, next);
+    //return expressMiddleware(apolloServer)(request, response, next);
+    request.setTimeout(10 * 1000);
+    return expressMiddleware(apolloServer, {
+      context,
+    })(request, response, next);
   });
   httpServer.listen({ port }, (): void => console.log(`GraphQL is now running on http://localhost:${port}`));
 })();
