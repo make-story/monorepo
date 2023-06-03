@@ -1,3 +1,4 @@
+// 더미 데이터
 const books = [
   {
     title: 'The Awakening',
@@ -11,7 +12,10 @@ const books = [
 
 const resolver = {
   Query: {
-    books: () => books,
+    books: () => {
+      // 반환 데이터
+      return books;
+    },
   },
 };
 

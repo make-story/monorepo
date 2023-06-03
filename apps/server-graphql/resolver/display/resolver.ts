@@ -1,7 +1,7 @@
 const resolver = {
   Query: {},
   Mutation: {
-    async mutationDisplayTest(_, params, { dataSources, ...context }) {
+    async mutationDisplayTest(_: any, params: any, { dataSources, ...context }: any) {
       return {};
     },
   },

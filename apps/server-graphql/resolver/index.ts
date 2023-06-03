@@ -7,9 +7,9 @@ import { compile } from 'path-to-regexp';
 /**
  *
  */
-import module1 from './module1';
-import module2 from './module2';
-export const resolvers = [module2];
+import books from './books/index';
+import module1 from './module1/index';
+export const resolvers = [books];
 
 /**
  *
@@ -23,7 +23,7 @@ export interface DataHelperRequestOption<RequestParam = any> extends Omit<Contex
   flatDepth: 0 | 1;
 }
 class DataHelper extends RESTDataSource {
-  override memoizeGetRequests: boolean = false;
+  //override memoizeGetRequests: boolean = false;
 
   public willSendRequest(request: WillSendRequestOptions) {}
 
