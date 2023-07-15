@@ -7,6 +7,7 @@
   "license": "ISC",
   "scripts": {
     "local": "cross-env APP_ENV=dev nodemon --exec ts-node -r tsconfig-paths/register server.ts",
+    "start": "cross-env APP_ENV=dev nodemon server.js",
     "build:dev": "webpack --mode=none",
     "build:prod": "webpack --mode=production",
     "prebuild:dev": "yarn prebuild",
