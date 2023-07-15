@@ -1,5 +1,12 @@
-// PostCSS
-// https://nextjs.org/docs/advanced-features/customizing-postcss-config
+/**
+ * PostCSS
+ * $ yarn add postcss postcss-preset-env
+ * https://github.com/postcss/postcss#usage
+ *
+ * Next.js 내부에 postcss 내장됨
+ * https://nextjs.org/docs/advanced-features/customizing-postcss-config
+ */
+
 module.exports = {
   plugins: [
     [

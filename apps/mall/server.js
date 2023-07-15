@@ -22,6 +22,11 @@ const { parse } = require('url');
 //const { TEST } = require('@makeapi/nodejs');
 //console.log('TEST', TEST);
 
+// node 예외처리
+process.on('uncaughtException', error => {
+  console.log('uncaughtException ', error);
+});
+
 const dev = process.env.NODE_ENV !== 'production';
 const hostname = 'localhost';
 const port = process.env.PORT || 3000;
@@ -37,11 +42,6 @@ if (fs.existsSync(envPath)) {
 if (dev) {
   console.log('process.env', process.env);
 }
-
-// node 예외처리
-process.on('uncaughtException', error => {
-  console.log('uncaughtException ', error);
-});
 
 // Next.js를 Express와 연결 - 같은 포트에서 실행
 const app = next({ dev, hostname, port });
