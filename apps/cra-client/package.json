@@ -1,5 +1,5 @@
 {
-  "name": "client",
+  "name": "cra-client",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,10 +9,7 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "extends": []
   },
   "browserslist": {
     "production": [

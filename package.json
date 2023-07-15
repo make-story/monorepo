@@ -21,8 +21,8 @@
     "packages:typecheck": "yarn workspaces --include '@makeapi/*' run typecheck",
     "mall": "yarn workspace @makeapi/mall",
     "server-graphql": "yarn workspace server-graphql",
-    "server": "yarn workspace server",
-    "client": "yarn workspace client"
+    "cra-server": "yarn workspace cra-server",
+    "cra-client": "yarn workspace cra-client"
   },
   "dependencies": {
     "@babel/core": "7.12.10",
