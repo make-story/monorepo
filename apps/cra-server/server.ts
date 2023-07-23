@@ -3,22 +3,25 @@
  */
 import { resolve } from 'path';
 import express, { Request, NextFunction, Response } from 'express';
+import dotenv from 'dotenv';
 import { json, text, urlencoded } from 'body-parser';
 import cookieParser from 'cookie-parser';
 import { createProxyMiddleware } from 'http-proxy-middleware';
-import dotenv from 'dotenv';
-
-// 루트 폴더 '.env' 파일
-dotenv.config();
-const isProd: boolean = process.env.NODE_ENV === 'production';
-const port = isProd && process.env.PORT ? process.env.PORT : 9030;
+//import cors from 'cors';
 
 // Exception Handler 등록
 // UncatchedException 이 발생하면 Node.js 인스턴스가 죽음(서버다운) 방지
 // https://nodejs.org/api/process.html#process_warning_using_uncaughtexception_correctly
 process.on('uncaughtException', error => {
-  console.log('Caught exception: ' + error);
+  console.log('uncaughtException ', error);
 });
+
+// 루트 폴더 '.env' 파일
+dotenv.config();
+
+// env 환경
+const isProd: boolean = process.env.NODE_ENV === 'production';
+const port = isProd && process.env.PORT ? process.env.PORT : 9030;
 
 // express
 const app = express();
