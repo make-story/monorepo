@@ -6,35 +6,21 @@ import express, { Request, NextFunction, Response } from 'express';
 import { json, text, urlencoded } from 'body-parser';
 import cookieParser from 'cookie-parser';
 import { createProxyMiddleware } from 'http-proxy-middleware';
+import dotenv from 'dotenv';
 
-function encode(value: any, debug = false): string {
-  try {
-    if (value === undefined || value === null || value instanceof Function) {
-      value = '';
-    }
-    return btoa(JSON.stringify(value));
-  } catch (exception) {
-    if (debug) {
-      console.debug('[encode]', exception);
-    }
-    return '';
-  }
-}
+// 루트 폴더 '.env' 파일
+dotenv.config();
+const isProd: boolean = process.env.NODE_ENV === 'production';
+const port = isProd && process.env.PORT ? process.env.PORT : 9030;
 
-function decode<T = any>(value?: string | null, debug = false): T | null {
-  if (typeof value !== 'string') {
-    throw new Error(typeof value);
-  }
-  try {
-    return JSON.parse(atob(value)) as T;
-  } catch (exception) {
-    if (debug) {
-      console.debug('[decode]', exception);
-    }
-    return null;
-  }
-}
+// Exception Handler 등록
+// UncatchedException 이 발생하면 Node.js 인스턴스가 죽음(서버다운) 방지
+// https://nodejs.org/api/process.html#process_warning_using_uncaughtexception_correctly
+process.on('uncaughtException', error => {
+  console.log('Caught exception: ' + error);
+});
 
+// express
 const app = express();
 
 // express 프록시 환경
@@ -49,7 +35,17 @@ app.use((request: Request, response: Response, next: NextFunction) => {
   return next();
 });
 
-// 로컬환경
+// API 처리 - GraphQL 서버 연결
+app.use('/api/v1', async (request: Request, response: Response, next: NextFunction) => {
+  console.log('request!!!!', request.baseUrl);
+
+  // axios
+  // ...
+
+  return next();
+});
+
+// 로컬환경 SPA HTML (CRA 서버 접근)
 app.use(
   '/*',
   createProxyMiddleware({
@@ -58,11 +54,11 @@ app.use(
     secure: false,
   }),
 );
-// 개발/운영환경
-app.use('/*', (request: Request, response: Response) =>
-  response.sendFile(resolve(process.cwd(), '../client/build/index.html')),
-);
 
-app.listen(9030, () => {
-  console.log('server 9030');
-});
+// 개발/운영환경 SPA HTML (빌드된 HTML 로드)
+/*app.use('/*', (request: Request, response: Response) =>
+  response.sendFile(resolve(process.cwd(), '../client/build/index.html')),
+);*/
+
+// 서버 실행
+app.listen(port, () => console.log(`[CRA Server!!] http://localhost:${port}`));

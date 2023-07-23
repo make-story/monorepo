@@ -23,7 +23,7 @@
     "server-graphql": "yarn workspace server-graphql",
     "cra-server": "yarn workspace cra-server",
     "cra-client": "yarn workspace cra-client",
-    "cra-local": "concurrently \"yarn cra-server start\" \"yarn cra-client start\""
+    "local": "concurrently \"yarn server-graphql server\" \"yarn cra-server start\" \"yarn cra-client start\""
   },
   "dependencies": {
     "@babel/core": "7.12.10",
