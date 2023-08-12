@@ -16,10 +16,8 @@ process.on('uncaughtException', error => {
   console.log('uncaughtException ', error);
 });
 
-// 루트 폴더 '.env' 파일
-dotenv.config();
-
 // env 환경
+dotenv.config();
 const isProd: boolean = process.env.NODE_ENV === 'production';
 const port = isProd && process.env.PORT ? process.env.PORT : 9030;
 

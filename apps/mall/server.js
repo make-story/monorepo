@@ -31,7 +31,7 @@ const dev = process.env.NODE_ENV !== 'production';
 const hostname = 'localhost';
 const port = process.env.PORT || 3000;
 
-// env 설정
+// env 설정 (dotenv 기본 외 파일 수동 지정 설정)
 const envPath = path.join(__dirname, `envs/.env.${process.env.NODE_ENV}`);
 if (fs.existsSync(envPath)) {
   dotenv.config({ path: envPath });
@@ -50,12 +50,14 @@ app.prepare().then(() => {
   // express
   const server = express();
 
-  const corsOptions = {
-    origin: true,
-    credentials: true,
-    optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
-  };
-  server.use(cors(corsOptions)); // cors
+  server.use(
+    cors({
+      // cors
+      origin: true,
+      credentials: true,
+      optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+    }),
+  );
   server.use(express.json()); // json request body 파싱
   server.use(express.urlencoded({ extended: true }));
   server.use(cookieParser()); // process.env.COOKIE_SECRET
@@ -98,7 +100,7 @@ app.prepare().then(() => {
     return res.redirect('/test');
   });
   /*server.get('/', function (req, res, next) {
-        return res.redirect('/main');
+    return res.redirect('/main');
   });*/
   server.get('*', (req, res) => {
     return handle(req, res);
