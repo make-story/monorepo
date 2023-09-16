@@ -1,27 +1,18 @@
 {
-  "editor.codeActionsOnSave": {
-    "source.organizeImports": true
-  },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
-  "editor.insertSpaces": false,
-  "editor.minimap.enabled": false,
-  "editor.stickyScroll.enabled": true,
-  "editor.tabSize": 2,
-  "editor.unicodeHighlight.nonBasicASCII": false,
-  "explorer.confirmDragAndDrop": false,
-  "files.eol": "\n",
-  "files.insertFinalNewline": true,
-  "git.confirmSync": false,
-  "prettier.htmlWhitespaceSensitivity": "ignore",
-  "prettier.quoteProps": "consistent",
-  "prettier.singleQuote": true,
-  "prettier.useTabs": true,
-  "svelte.enable-ts-plugin": true,
-  "svelte.plugin.svelte.note-new-transformation": false,
-  "terminal.integrated.enablePersistentSessions": false,
-  "window.commandCenter": true,
-  "workbench.colorTheme": "GitHub Dark Default",
-  "workbench.editor.untitled.hint": "hidden",
-  "workbench.startupEditor": "none"
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.organizeImports": true
+  },
+  "eslint.format.enable": true,
+  "eslint.quiet": true,
+  "eslint.validate": [
+    "javascript",
+    "typescript",
+    "javascriptreact",
+    "typescriptreact",
+    "vue",
+    "html"
+  ]
 }

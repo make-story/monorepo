@@ -1,0 +1,8 @@
+node_modules
+npm-debug.log
+**/*.local
+**/.next
+**/_next
+**/dist
+**/.dist
+**/_dist
