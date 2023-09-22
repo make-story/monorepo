@@ -20,6 +20,7 @@
     "packages:lint": "yarn workspaces --include '@makeapi/*' run lint",
     "packages:typecheck": "yarn workspaces --include '@makeapi/*' run typecheck",
     "mall": "yarn workspace @makeapi/mall",
+    "nextjs-test": "yarn workspace nextjs-test",
     "server-graphql": "yarn workspace server-graphql",
     "cra-server": "yarn workspace cra-server",
     "cra-client": "yarn workspace cra-client",
