@@ -2,6 +2,20 @@
 
 https://github.com/make-story/study
 
+# React CRA + Node.js 서버 + GraphQL 서버
+
+package
+
+- cra-client
+- cra-server
+- server-graphq
+
+```json
+{
+  "local": "concurrently \"yarn server-graphql server\" \"yarn cra-server start\" \"yarn cra-client start\""
+}
+```
+
 # 이슈
 
 ## Next.js
