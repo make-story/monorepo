@@ -111,12 +111,7 @@ export default function Index() {
       <Global styles={[Styled.globalStyle]} />
       <Styled.test maxHeight={'10px'} />
       <div className='circle_progress_wrap'>
-        <svg
-          className='circle_progress'
-          width='120'
-          height='120'
-          viewBox='0 0 120 120'
-        >
+        <svg className='circle_progress' width='120' height='120' viewBox='0 0 120 120'>
           <circle className='frame' cx='60' cy='60' r='54' strokeWidth='12' />
           <circle className='bar' cx='60' cy='60' r='54' strokeWidth='12' />
         </svg>
