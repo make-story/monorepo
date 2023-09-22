@@ -14,5 +14,6 @@
     "typescriptreact",
     "vue",
     "html"
-  ]
+  ],
+  "json.schemas": []
 }
