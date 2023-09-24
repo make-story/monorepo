@@ -1,0 +1,22 @@
+@keyframes slide-sticky-buy-box-down {
+  0% {
+    position: static;
+    top: 88px;
+    transform: translateY(-100%);
+  }
+
+  to {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 88px;
+    transform: translateY(0);
+  }
+}
+
+.slide-sticky-buy-box-down {
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-name: slide-sticky-buy-box-down;
+  position: -webkit-sticky;
+  position: sticky;
+}

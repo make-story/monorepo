@@ -6,7 +6,7 @@ import React from 'react';
 import { NextComponentType } from 'next';
 import { AppContext, AppInitialProps, AppProps } from 'next/app';
 
-import '@/pages/index.css';
+import '@/common/style/global.css';
 
 // https://nextjs.org/docs/basic-features/typescript#custom-app
 const App: NextComponentType<AppContext, AppInitialProps, AppProps> = ({
