@@ -24,6 +24,8 @@ package
 }
 ```
 
+## front-next-test.git 저정소에서도 GraphQL 테스트 가능
+
 # 커머스 테스트
 
 package
