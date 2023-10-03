@@ -2,7 +2,15 @@
 
 https://github.com/make-story/study
 
-# React CRA + Node.js 서버 + GraphQL 서버
+# 프로젝트
+
+# 더미 데이터 제공
+
+pckage
+
+- server-json
+
+# React CRA + Node.js 서버 + GraphQL 서버 테스트
 
 package
 
@@ -15,6 +23,21 @@ package
   "local": "concurrently \"yarn server-graphql server\" \"yarn cra-server start\" \"yarn cra-client start\""
 }
 ```
+
+# 커머스 테스트
+
+package
+
+- mall
+
+# next.js 테스트
+
+v12
+
+package
+
+- nextjs-test
+- nextjs-wiki-book
 
 # 이슈
 
