@@ -23,9 +23,16 @@ module.exports = {
     node: true,
   },
 
+  // 파서
+  // eslint-plugin-vue (vue-eslint-parser)
+  parser: 'vue-eslint-parser',
+
   // ESLint 사용을 위해 지원하려는 JavaScript 언어 옵션을 설정할 수 있다.
   parserOptions: {
     sourceType: 'module',
-    ecmaVersion: 'latest',
   },
+
+  // eslint rule 설정이 저장되어 있는 외부 file 을 extends 하는 부분이다.
+  // (extends 는 추가한 플러그인에서 사용할 규칙을 설정하는 것)
+  extends: ['eslint:recommended', 'plugin:vue/essential'],
 };

@@ -21,6 +21,7 @@
     "packages:typecheck": "yarn workspaces --include '@makeapi/*' run typecheck",
     "mall": "yarn workspace @makeapi/mall",
     "nextjs-test": "yarn workspace nextjs-test",
+    "vuejs-test": "yarn workspace vuejs-test",
     "server-graphql": "yarn workspace server-graphql",
     "cra-server": "yarn workspace cra-server",
     "cra-client": "yarn workspace cra-client",
