@@ -1,14 +1,22 @@
 {
   "name": "vuejs-test",
   "version": "0.1.0",
-  "private": true,
+  "type": "module",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "dev": "cross-env NODE_ENV=${NODE_ENV:=development} PORT=80 PORT_SSL=443 node --inspect=9191 server/main.js"
   },
   "dependencies": {
+    "body-parser": "^1.20.2",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.6",
     "core-js": "^3.8.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
     "vue": "^2.6.14"
   },
   "devDependencies": {

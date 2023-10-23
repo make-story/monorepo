@@ -2,13 +2,15 @@
 
 https://github.com/make-story/study
 
-# 프로젝트
+# 더미 데이터 제공 서버 (json-server 활용)
 
-# 더미 데이터 제공
-
-pckage
+package
 
 - server-json
+
+```
+$ yarn add json-server
+```
 
 # React CRA + Node.js 서버 + GraphQL 서버 테스트
 
