@@ -8,8 +8,10 @@
  * $ vue inspect > output.js
  * $ vue inspect --mode production > output.prod.js
  */
-const { defineConfig } = require('@vue/cli-service');
-module.exports = defineConfig({
+//const { defineConfig } = require('@vue/cli-service');
+import { defineConfig } from '@vue/cli-service';
+
+export default defineConfig({
   // transpileDependencies
   // babel-loader과 관련된 항목으로 babel-loader는 default로 node_modules 하위에 있는 항목들은 처리를 하지 않는데 transpileDependencies 항목으로 지정된 경우에는 처리를 해주게 됩니다.
   transpileDependencies: true,

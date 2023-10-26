@@ -8,7 +8,7 @@
  * eslint-config-pretteir로 eslint의 원래 포매팅 기능을 없애버리고, eslint-plugin-prettier로 prettier의 포매팅 기능을 사용합니다.
  */
 
-module.exports = {
+export default {
   // ESLint 구성파일 탐색 범위
   // default 는 true 인데, 이 값이 true 가 아니면, eslintrc 파일을 찾을 때,
   // 해당 프로젝트 디렉토리 뿐 아니라, 내 PC의 root 파일 시스템 root 디렉토리까지 eslint 를 찾는다.
