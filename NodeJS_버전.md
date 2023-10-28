@@ -1,4 +1,10 @@
+# 'mall' 프로젝트
+
 `v14.20.1` 실행환경
+
+# 'cra-client', 'cra-server', 'design-system-storybook', 'nextjs-test', 'server-graphql', 'vuejs-test'
+
+`v16.14.2` 실행환경
 
 ---
 
