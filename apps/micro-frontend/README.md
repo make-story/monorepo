@@ -1,4 +1,4 @@
-# 모던 웹을 위한 마이크로 프론트엔드
+# `모던 웹을 위한 마이크로 프론트엔드` 책 내용 기반
 
 https://github.com/PacktPublishing/The-Art-of-Micro-Frontends
 

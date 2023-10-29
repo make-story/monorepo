@@ -16,6 +16,7 @@ import dotenv from 'dotenv';
 import express from 'express';
 import cookieParser from 'cookie-parser'; // req.cookies 객체
 import cors from 'cors';
+import { renderFile } from 'ejs';
 
 import routerTest from '../router/test.js';
 
@@ -51,6 +52,7 @@ const app = express();
 // app.set(name, value)
 // https://expressjs.com/ko/api.html#app.settings.table
 // http://expressjs.com/en/guide/using-template-engines.html
+app.engine('ejs', renderFile);
 app.set('view engine', 'ejs'); // view 엔진 설정 - index.ejs 등 확장자 - http://ejs.co/
 app.set('views', path.resolve(__dirname, './page')); // views 디렉토리 설정 - response.render('경로') 사용
 
