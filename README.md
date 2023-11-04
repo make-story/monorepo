@@ -28,15 +28,13 @@ package
 
 ## front-next-test.git 저정소에서도 GraphQL 테스트 가능
 
-# 커머스 테스트
+# 커머스 테스트 관련
 
 package
 
 - mall
 
-# next.js 테스트
-
-v12
+# next.js 테스트 관련
 
 package
 

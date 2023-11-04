@@ -3,6 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "preinstall": "node -e \"if(process.env.npm_execpath.indexOf('yarn') === -1) throw new Error('use Yarn, no NPM')\"",
+    "prebuild-storybook": "node -e \"if(process.versions.node.split('.').shift() !== '16') throw new Error('Node.js 버전 확인 필요!')\"",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook"
   },

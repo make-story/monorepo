@@ -5,6 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "preinstall": "node -e \"if(process.env.npm_execpath.indexOf('yarn') === -1) throw new Error('use Yarn, no NPM')\"",
+    "prebuild": "node -e \"if(process.versions.node.split('.').shift() !== '16') throw new Error('Node.js 버전 확인 필요!')\"",
     "help-inspect": "echo \"node --inspect server.js 실행 후, 크롬브라우저 chrome://inspect/#devices 접속, Remote Target 목록에서 해당 'inspect' 링크 클릭\"",
     "typecheck": "tsc --project ./tsconfig.json --noEmit",
     "server": "cross-env NODE_ENV=development nodemon --exec ts-node -r tsconfig-paths/register server.ts"

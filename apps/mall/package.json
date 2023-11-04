@@ -7,6 +7,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "preinstall": "node -e \"if(process.env.npm_execpath.indexOf('yarn') === -1) throw new Error('use Yarn, no NPM')\"",
+    "prebuild": "node -e \"if(process.versions.node.split('.').shift() !== '14') throw new Error('Node.js 버전 확인 필요!')\"",
     "typecheck": "tsc --project ./tsconfig.json --noEmit",
     "lint": "eslint . --ext .ts,.tsx,.js,.jsx,.cjs,.mjs,.mdx,.graphql",
     "dev": "cross-env NODE_ENV=${NODE_ENV:=development} PORT=80 PORT_SSL=443 node --inspect=9191 server.js",

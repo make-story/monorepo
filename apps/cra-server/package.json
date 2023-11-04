@@ -7,11 +7,12 @@
   "license": "ISC",
   "scripts": {
     "start": "cross-env APP_ENV=dev nodemon --exec ts-node -r tsconfig-paths/register server.ts",
+    "preinstall": "node -e \"if(process.env.npm_execpath.indexOf('yarn') === -1) throw new Error('use Yarn, no NPM')\"",
+    "prebuild": "rimraf ./dist && node -e \"if(process.versions.node.split('.').shift() !== '16') throw new Error('Node.js 버전 확인 필요!')\"",
     "build:dev": "webpack --mode=none",
     "build:prod": "webpack --mode=production",
     "prebuild:dev": "yarn prebuild",
-    "prebuild:prod": "prebuild",
-    "prebuild": "rimraf ./dist"
+    "prebuild:prod": "prebuild"
   },
   "devDependencies": {
     "@types/cookie-parser": "^1.4.3",
