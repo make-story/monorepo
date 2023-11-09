@@ -5,7 +5,8 @@
 export default {
   template: `
 		<div>
-			<h1>Life Cycle Hooks <span v-text="sitename"></span></h1>
+      <p>Built-in Directives</p>
+      <span v-text="sitename"></span>
 		</div>
 	`,
   data() {

@@ -1,5 +1,6 @@
 import Vue from 'vue';
 
+import './assets/css/index.css';
 import App from './App.vue';
 import { basicTest, vuexTest } from './basics';
 
