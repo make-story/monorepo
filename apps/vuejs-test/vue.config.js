@@ -17,6 +17,16 @@ export default defineConfig({
   transpileDependencies: true,
   //
   lintOnSave: false,
+  //
+  chainWebpack: config => {
+    // HtmlWebpackPlugin 옵션 중 'inject' 부분 설정
+    config.plugin('html').tap(args => {
+      args[0].inject = 'body';
+      return args;
+    });
+  },
+  //
+  runtimeCompiler: true, // true : build 파일에 compiler를 포함 (Vue { template: '' } 속성이 있는 경우, 런타임에서 컴파일 필요)
 });
 
 /*
