@@ -1,0 +1,11 @@
+{
+  "name": "@makeapi/util",
+  "version": "1.0.0",
+  "description": "프로젝트 공통 유틸",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "typecheck": "tsc --project ./tsconfig.json --noEmit",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx,.cjs,.mjs,.mdx,.graphql"
+  }
+}

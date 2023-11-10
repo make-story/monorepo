@@ -80,6 +80,7 @@ module.exports = {
     'no-useless-catch': 0, // 불필요한 catch
     'no-empty-pattern': 0, // 객체 해체 할당 관련
     'no-use-before-define': 1, // 정의 되기 전에 사용하는 것을 방지
+    '@typescript-eslint/no-inferrable-types': 'off', // 숫자, 문자열 또는 부울로 '초기화된 변수 또는 매개변수'에 대한 명시적 타입 선언을 허용 여부 (초기값이 있는 변수나 매개변수는 타입추론이 가능하기 때문에 티압 선언을 안하도록 할지 여부)
     '@typescript-eslint/no-var-requires': 'off', // require 사용을 방지
     '@typescript-eslint/explicit-function-return-type': 'off', // 타입스크립트에서 함수형 컴포넌트 사용시 React.FC를 사용하지 말라는 글 관련 - https://medium.com/@martin_hotell/10-typescript-pro-tips-patterns-with-or-without-react-5799488d6680#78b9
     '@typescript-eslint/ban-types': [
