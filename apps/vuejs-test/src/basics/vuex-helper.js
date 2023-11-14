@@ -4,18 +4,34 @@
 
 import { mapState, mapGetters, mapMutations, mapActions, createNamespacedHelpers, } from 'vuex'
 
-/*
+
 // store 모듈 단위 사용
 const productsHelper = createNamespacedHelpers('products');
 export default {
+	template: `
+	<div>
+		<div>{{ test.split('').reverse().join('') }}</div>
+		<div>{{ reversedTest }}</div>
+	</div>
+	`,
+	data() {
+		return {
+			test: 'Hello'
+		}
+	  },
+	// methods와 차이점은 캐싱을 시켜놓고 동일한 요청이 또 올 경우는 함수를 실행하지 않고 캐싱된 값만 리턴해 줌 
 	computed: {
 		...productsHelper.mapState({
 			message: state => state.message     // -> this.message
 		}),
 		...productsHelper.mapGetters([
 			'getMsg'       // -> this.getMsg
-		])
+		]),
+		reversedTest() {
+			return this.test.split('').reverse().join('');
+		}
 	},
+	// 뷰의 메서드는 특정 기능 별로 묶을 수 있는 자바스크립트 함수를 의미
 	methods: {
 		...productsHelper.mapMutations([
 			'changeMessage'     // -> this.changeMessage()
@@ -27,7 +43,7 @@ export default {
 }
 
 // 또는
-
+/*
 export default {
 	computed: {
 		...mapState('products', {

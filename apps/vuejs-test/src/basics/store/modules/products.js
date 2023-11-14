@@ -3,12 +3,14 @@ const state = {
   test: {
     data: 1234,
   },
+  message: '',
 };
 
 // 모든 Vue 게터를 가집니다.
 // getters
 const getters = {
   getTest: (state, getters, rootState) => state.test,
+  getMsg: (state, getters, rootState) => state.message,
 };
 
 // 모든 Vue 액션을 가집니다.
@@ -26,6 +28,9 @@ const actions = {
       commit('SET_STORE', { test: 'YSM' });
     }, 5000);
   },
+  callMutation: ({ state, commit, rootState }) => {
+    console.log('actions > callMutation', rootState);
+  },
 };
 
 // 모든 Vuex 뮤테이션을 가집니다.
@@ -37,6 +42,9 @@ const mutations = {
   },
   SET_STORE(state /* Vuex 상태값 */, payload /* 사용자 데이터 */) {
     state.test = payload;
+  },
+  changeMessage(state, payload) {
+    state.message = payload;
   },
 };
 
