@@ -1,4 +1,8 @@
 // Vue 생명 주기 훅
+/*
+method, computed, watch 내용은  
+"property.js" 파일 참고  
+*/
 
 //import Vue from 'vue';
 
@@ -7,6 +11,7 @@ export default {
 		<div>
       <p>Built-in Directives</p>
       <span v-text="sitename"></span>
+      <button v-bind:click="clickButton">click me</button>
 		</div>
 	`,
   data() {
