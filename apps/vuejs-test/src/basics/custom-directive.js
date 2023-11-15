@@ -21,7 +21,7 @@ unbind: 지시자가 요소에서 바인딩 해제될 때 호출됩니다.
 Vue.directive('style-global', {
 	bind(el, binding) {
 		el.style.color = binding.value || "blue";
-		// <div v-style-global.small>안녕하세요.</div>5
+		// <div v-style-global.small>안녕하세요.</div>
 		if(binding.modifiers.small) {
 			el.style.fontSize = "17px";
 		}

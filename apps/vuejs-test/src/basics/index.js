@@ -15,9 +15,13 @@ import LifeCycle from './life-cycle-hooks';
 import Mixin from './mixin-component';
 import Property from './property';
 import Props from './props';
+//import {} from './reactivity';
+import SingleFileComponent from './single-file-component.vue';
 import Slot from './slot';
+//import {} from './template';
 import { store as moduleStore } from './store/store';
 import { store as singleStore } from './vuex-store';
+import VuexHelper from './vuex-helper';
 //import { mapGetters } from 'vuex';
 
 export const basicTest = {
@@ -86,6 +90,10 @@ export const basicTest = {
         <h1>믹스인 컴포넌트 테스트</h1>
         <mixin-component></mixin-component>
       </div>
+      <div>
+        <h1>Vuex Helper</h1>
+        <vuex-helper></vuex-helper>
+      </div>
     </div>
   `,
   store: moduleStore,
@@ -117,6 +125,7 @@ export const basicTest = {
     'async-component': AsyncComponent,
     'dynamic-component': DynamicComponent,
     'mixin-component': Mixin,
+    'vuex-helper': VuexHelper,
   },
   created() {
     // vuex 스토어 테스트
