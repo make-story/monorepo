@@ -5,6 +5,7 @@
     "source.fixAll": true,
     "source.organizeImports": true
   },
+  "eslint.enable": false,
   "eslint.format.enable": true,
   "eslint.quiet": true,
   "eslint.validate": [
@@ -15,5 +16,7 @@
     "vue",
     "html"
   ],
+  "prettier.enableDebugLogs": true,
+  "prettier.requireConfig": true,
   "json.schemas": []
 }
