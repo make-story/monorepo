@@ -11,6 +11,10 @@
 // watch 속성은 감시할 데이터를 지정하고 그 데이터가 바뀌면 이런 함수를 실행하라는 방식 (소프트웨어 공학에서 이야기하는 ‘명령형 프로그래밍’ 방식)
 // computed 속성은 계산해야 하는 목표 데이터를 정의하는 방식 (소프트웨어 공학에서 이야기하는 ‘선언형 프로그래밍’ 방식)
 
+// data 는 함수여야 합니다.
+// https://v2.ko.vuejs.org/v2/guide/components.html#data-%EB%8A%94-%EB%B0%98%EB%93%9C%EC%8B%9C-%ED%95%A8%EC%88%98%EC%97%AC%EC%95%BC%ED%95%A9%EB%8B%88%EB%8B%A4
+// 공통 컴포넌트에서 data 의 동일한 객체가 아닌 새로운 객체를 반환 (불변성)
+
 /*
 -
 정리
@@ -37,7 +41,7 @@ watch: {
 */
 
 export default {
-	template: `
+  template: `
 		<div>
 			<p>원본 메시지: "{{ message }}"</p>
 			<p>역순으로 표시한 메시지: "{{ reversedMessage }}"</p>
@@ -49,53 +53,51 @@ export default {
 			</p>
 		</div>
 	`,
-	data() {
-		return {
-			message: '안녕하세요',
-			firstName: 'Foo',
-			lastName: 'Bar',
-			length: 5,
-			width: 3,
-		};
-	},
-	// 계산된 속성, 캐싱
-	computed: {
-		// 계산된 getter
-		reversedMessage: function () {
-			return this.message.split('').reverse().join('')
-		},
-		fullName: {
-			// getter
-			// 인스턴스.fullName
-			get: function () {
-				return this.firstName + ' ' + this.lastName
-			},
-			// setter
-			// 인스턴스.fullName = 'John Doe' 
-			set: function (newValue) {
-				let names = newValue.split(' ')
-				this.firstName = names[0]
-				this.lastName = names[names.length - 1]
-			}
-		},
-		area: function() {
-			return this.width * this.length;
-		},
-	},
-	// 렌더링을 다시 할 때마다 항상 함수를 실행
-	method: {
-
-	},
-	// 데이터 변경을 관찰하고 이에 반응
-	watch: {
-		length: function(newVal, oldVal) {
-			console.log(`이전 새로 길이: ${oldVal}, 새 세로 길이: ${newVal}`);
-		},
-		width: function(newVal, oldVal) {
-			console.log(`이전 가로 길이: ${oldVal}, 새 가로 길이: ${newVal}`);
-		},
-		area: function(newVal, oldVal) {
-			console.log(`이전 넓이: ${oldVal}, 새 넓이: ${newVal}`);
-		}
-	},
+  data() {
+    return {
+      message: '안녕하세요',
+      firstName: 'Foo',
+      lastName: 'Bar',
+      length: 5,
+      width: 3,
+    };
+  },
+  // 계산된 속성, 캐싱
+  computed: {
+    // 계산된 getter
+    reversedMessage: function () {
+      return this.message.split('').reverse().join('');
+    },
+    fullName: {
+      // getter
+      // 인스턴스.fullName
+      get: function () {
+        return this.firstName + ' ' + this.lastName;
+      },
+      // setter
+      // 인스턴스.fullName = 'John Doe'
+      set: function (newValue) {
+        let names = newValue.split(' ');
+        this.firstName = names[0];
+        this.lastName = names[names.length - 1];
+      },
+    },
+    area: function () {
+      return this.width * this.length;
+    },
+  },
+  // 렌더링을 다시 할 때마다 항상 함수를 실행
+  method: {},
+  // 데이터 변경을 관찰하고 이에 반응
+  watch: {
+    length: function (newVal, oldVal) {
+      console.log(`이전 새로 길이: ${oldVal}, 새 세로 길이: ${newVal}`);
+    },
+    width: function (newVal, oldVal) {
+      console.log(`이전 가로 길이: ${oldVal}, 새 가로 길이: ${newVal}`);
+    },
+    area: function (newVal, oldVal) {
+      console.log(`이전 넓이: ${oldVal}, 새 넓이: ${newVal}`);
+    },
+  },
 };
