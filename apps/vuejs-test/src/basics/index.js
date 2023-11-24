@@ -60,6 +60,10 @@ export const basicTest = {
         <props-test str="YSM" :num="counter"></props-test>
       </div>
       <div>
+        <h1>싱글 파일 컴포넌트 테스트</h1>
+        <single-file-component></single-file-component>
+      </div>
+      <div>
         <h1>슬롯(slot) 테스트</h1>
         <slot-test :author="author" :title="title" :books="books">
           <p>{{header}}</p>
@@ -119,6 +123,7 @@ export const basicTest = {
     'directive-test': Directive,
     'filter-test': Filters,
     'props-test': Props,
+    'single-file-component': SingleFileComponent,
     'slot-test': Slot,
     'custom-directive': CustomDirective,
     'custom-event': CustomEvent,
