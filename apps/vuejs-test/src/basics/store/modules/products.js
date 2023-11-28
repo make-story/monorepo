@@ -13,6 +13,11 @@ const getters = {
   getMsg: (state, getters, rootState) => state.message,
 };
 
+/**
+ * actions / mutations
+ * 컴포넌트 -> 액션호출 -> 액션에서 비동기처리(API 호출) -> 비동기처리 응답값 뮤테이션 호출 -> 뮤테이션에서 상태(state)값 변경
+ */
+
 // 모든 Vue 액션을 가집니다.
 // 비동기 코드를 위해 액션 객체를 사용합니다.
 // dispatch(type: string, payload?: any, options?: Object): Promise<any>
@@ -34,6 +39,8 @@ const actions = {
 };
 
 // 모든 Vuex 뮤테이션을 가집니다.
+// Mutation 은 State 의 변경역할
+// Vuex는 공식적으로 Component로부터 Mutation을 직접 commit하는 것을 허가
 // commit(type: string, payload?: any, options?: Object)
 // commit(mutation: Object, options?: Object)
 const mutations = {
