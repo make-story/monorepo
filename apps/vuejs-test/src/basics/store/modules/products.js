@@ -63,3 +63,10 @@ export default {
   actions,
   mutations,
 };
+
+/**
+ * Vuex Store를 바인딩하는 4가지 방법
+ * https://kdydesign.github.io/2019/04/06/vuejs-vuex-helper/
+ *
+ * import { mapState, mapGetters, mapMutations, mapActions, createNamespacedHelpers, } from 'vuex';
+ */
