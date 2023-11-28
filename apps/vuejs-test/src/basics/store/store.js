@@ -16,7 +16,10 @@ export const store = new Vuex.Store({
 
 /*
 // https://velog.io/@art11010/Vue-Vuex-%EB%AA%A8%EB%93%88
+// https://vuex.vuejs.org/guide/state.html
 const store = new Vuex.Store({
+  // Vuex는 저장소를 모듈로 나눌 수 있다.
+  // 각 모듈은 자체 상태(state), 변이(mutation), 액션(action), 게터(getter) 및 심지어 중첩된 모듈을 포함 할 수 있다.
   modules: {
     account: {
       namespaced: true,
@@ -27,19 +30,19 @@ const store = new Vuex.Store({
         // ...
       }),
       getters: {
-        isAdmin() {
+        isAdmin(state, getters, rootState, rootGetters) {
           // -> getters['account/isAdmin']
           // ...
         },
       },
       actions: {
-        login() {
+        login({ dispatch, commit, getters, rootGetters }) {
           // -> dispatch('account/login')
           // ...
         },
       },
       mutations: {
-        login() {
+        login(state) {
           // -> commit('account/login')
           // ...
         },
