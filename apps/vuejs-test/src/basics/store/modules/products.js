@@ -1,4 +1,4 @@
-// 모든 Vuex 상태를 가집니다.
+// 모든 Vuex 상태(state)를 가집니다.
 const state = {
   test: {
     data: 1234,
@@ -6,8 +6,9 @@ const state = {
   message: '',
 };
 
-// 모든 Vue 게터를 가집니다.
-// getters
+// 모든 Vue 게터(getters)를 가집니다.
+// 특정 state 값을 반환하거나, state 를 가공한 값을 반환
+// state 값을 가져와 여러 컴포넌트에서 동일한 가공을 해야할 때, 가공로직 공통화 할 수 있음
 const getters = {
   getTest: (state, getters, rootState) => state.test,
   getMsg: (state, getters, rootState) => state.message,
@@ -18,7 +19,7 @@ const getters = {
  * 컴포넌트 -> 액션호출 -> 액션에서 비동기처리(API 호출) -> 비동기처리 응답값 뮤테이션 호출 -> 뮤테이션에서 상태(state)값 변경
  */
 
-// 모든 Vue 액션을 가집니다.
+// 모든 Vue 액션(actions)을 가집니다.
 // 비동기 코드를 위해 액션 객체를 사용합니다.
 // dispatch(type: string, payload?: any, options?: Object): Promise<any>
 // dispatch(action: Object, options?: Object): Promise<any>
