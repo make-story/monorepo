@@ -23,6 +23,7 @@
     "nextjs-test": "yarn workspace nextjs-test",
     "vuejs-test": "yarn workspace vuejs-test",
     "server-graphql": "yarn workspace server-graphql",
+    "server-json": "yarn workspace server-json",
     "cra-server": "yarn workspace cra-server",
     "cra-client": "yarn workspace cra-client",
     "local": "concurrently \"yarn server-graphql server\" \"yarn cra-server start\" \"yarn cra-client start\""
