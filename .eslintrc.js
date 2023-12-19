@@ -6,11 +6,6 @@
  * $ yarn add @typescript-eslint/eslint-plugin @typescript-eslint/parser
  * $ yarn add eslint-config-next
  *
- * Next.js 의 ESLint 설정
- * { "extends": "next/core-web-vitals" }
- * { "extends": "next" }
- * 두 구성 옵션 중 하나가 선택되면 Next.js는 자동으로 eslint 및 eslint-config-next를 애플리케이션의 development dependencies로 설치하고 선택한 구성을 포함하는 프로젝트 루트에 .eslintrc.json 파일을 생성합니다.
- *
  * ESLint 와 Prettier 충돌 해결
  * eslint-config-prettier : eslint에서 prettier와 겹치는 포매팅룰을 삭제합니다.
  * eslint-plugin-prettier : eslint에 prettier의 포매팅 기능을 추가합니다.
@@ -51,12 +46,13 @@ module.exports = {
     },
   },
 
-  // 플러그인은 일련의 규칙 집합이며, 플러그인을 추가하여도 규칙은 적용되지 않습니다.
-  // (규칙을 적용하기 위해서는 추가한 플러그인 중, 사용할 규칙을 extends 에 추가해주어야 적용이 됩니다.)
+  // 플러그인은 일련의 규칙(rules) 집합이며, 플러그인을 추가하여도 규칙(rules)은 적용되지 않습니다.
+  // (규칙을 적용하기 위해서는 추가한 플러그인 중, 사용할 규칙을 추가해주어야 적용이 됩니다.)
   plugins: ['react', 'react-hooks', 'import', '@typescript-eslint', 'prettier'],
 
-  // eslint rule 설정이 저장되어 있는 외부 file 을 extends 하는 부분이다.
-  // (extends 는 추가한 플러그인에서 사용할 규칙을 설정하는 것)
+  // 패키지들이나 룰들을 모아서 설정으로 만든 것
+  // eslint-plugin-* 패키지의 설정은 extends 에서 plugin:패키지네임/설정네임으로 사용할 수 있는데
+  // eslint-config-* 패키지의 설정은 바로 *를 써주기만 하면 된다.
   extends: [
     //'next/core-web-vitals', // Next.js 공식 : 엄격모드, ELint를 처음 설정하는 개발자에게 권장되는 구성
     //'next', // Next.js 공식 : 기본모드
@@ -69,7 +65,7 @@ module.exports = {
   ],
 
   // 직접 lint rule 을 적용하는 부분
-  // extends로 자동으로 설정된 rules 중에, 특정 rule을 끄거나, erorr를 warning으로 나오도록 변경하는 등 설정을 바꿀 수 있다.
+  // extends 로 자동으로 설정된 rules 중에, 특정 rule을 끄거나, erorr를 warning으로 나오도록 변경하는 등 설정을 바꿀 수 있다.
   // https://eslint.org/docs/latest/rules/
   // off: 0, warn: 1, error: 2
   rules: {
