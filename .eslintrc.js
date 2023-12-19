@@ -6,6 +6,11 @@
  * $ yarn add @typescript-eslint/eslint-plugin @typescript-eslint/parser
  * $ yarn add eslint-config-next
  *
+ * Next.js 의 ESLint 설정
+ * { "extends": "next/core-web-vitals" }
+ * { "extends": "next" }
+ * 두 구성 옵션 중 하나가 선택되면 Next.js는 자동으로 eslint 및 eslint-config-next를 애플리케이션의 development dependencies로 설치하고 선택한 구성을 포함하는 프로젝트 루트에 .eslintrc.json 파일을 생성합니다.
+ *
  * ESLint 와 Prettier 충돌 해결
  * eslint-config-prettier : eslint에서 prettier와 겹치는 포매팅룰을 삭제합니다.
  * eslint-plugin-prettier : eslint에 prettier의 포매팅 기능을 추가합니다.
