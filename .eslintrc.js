@@ -59,8 +59,8 @@ module.exports = {
     'plugin:@next/next/recommended', // https://nextjs.org/docs/pages/building-your-application/configuring/eslint#migrating-existing-config
     //'plugin:react/recommended', // 리액트 추천 룰셋
     'plugin:@typescript-eslint/recommended', // // 타입스크립트 추천 룰셋 - https://typescript-eslint.io/linting/configs/#recommended
-    //'plugin:import/recommended', // import 추천 롤셋
-    //'plugin:import/typescript', // import typescript 롤셋
+    'plugin:import/recommended', // import 추천 롤셋
+    'plugin:import/typescript', // import typescript 롤셋
     'prettier', // 기존 각각 설정해주던 prettier 설정을 하나로 통합됨 - https://github.com/prettier/eslint-config-prettier/blob/main/CHANGELOG.md#version-800-2021-02-21
   ],
 
