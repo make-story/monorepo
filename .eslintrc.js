@@ -2,6 +2,10 @@
  * https://eslint.org/docs/latest/use/getting-started#configuration
  * https://eslint.org/docs/latest/rules/
  *
+ * $ yarn add eslint
+ * $ yarn add @typescript-eslint/eslint-plugin @typescript-eslint/parser
+ * $ yarn add eslint-config-next
+ *
  * ESLint 와 Prettier 충돌 해결
  * eslint-config-prettier : eslint에서 prettier와 겹치는 포매팅룰을 삭제합니다.
  * eslint-plugin-prettier : eslint에 prettier의 포매팅 기능을 추가합니다.
@@ -49,7 +53,9 @@ module.exports = {
   // eslint rule 설정이 저장되어 있는 외부 file 을 extends 하는 부분이다.
   // (extends 는 추가한 플러그인에서 사용할 규칙을 설정하는 것)
   extends: [
-    'plugin:@next/next/recommended', // @next/eslint-plugin-next - https://nextjs.org/docs/pages/building-your-application/configuring/eslint#eslint-plugin
+    //'next/core-web-vitals', // Next.js 공식 : 엄격모드, ELint를 처음 설정하는 개발자에게 권장되는 구성
+    //'next', // Next.js 공식 : 기본모드
+    'plugin:@next/next/recommended', // https://nextjs.org/docs/pages/building-your-application/configuring/eslint#migrating-existing-config
     //'plugin:react/recommended', // 리액트 추천 룰셋
     'plugin:@typescript-eslint/recommended', // // 타입스크립트 추천 룰셋 - https://typescript-eslint.io/linting/configs/#recommended
     //'plugin:import/recommended', // import 추천 롤셋
