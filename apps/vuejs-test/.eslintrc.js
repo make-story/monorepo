@@ -76,6 +76,7 @@ export default {
           'internal',
           ['parent', 'sibling'],
           'index',
+          'type',
         ],
         'newlines-between': 'always',
       },
