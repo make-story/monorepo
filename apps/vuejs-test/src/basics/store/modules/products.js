@@ -23,6 +23,17 @@ const getters = {
 // 비동기 코드를 위해 액션 객체를 사용합니다.
 // dispatch(type: string, payload?: any, options?: Object): Promise<any>
 // dispatch(action: Object, options?: Object): Promise<any>
+/*
+여러 작업을 동기적으로 디스패치해야 하는 경우
+try {
+  await this.$store.dispatch('action1');
+  await this.$store.dispatch('action2');
+  await this.$store.dispatch('action3');
+} catch (error) {
+  // Handle errors if any of the actions fail
+  console.error(error);
+}
+*/
 const actions = {
   increment({ state, commit, rootState }) {
     console.log('actions > increment', rootState);
