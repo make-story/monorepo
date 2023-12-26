@@ -6,7 +6,6 @@
     "source.fixAll.eslint": true
   },
   "eslint.enable": true,
-  "eslint.format.enable": true,
   "eslint.quiet": true,
   "eslint.validate": [
     "javascript",
