@@ -1,16 +1,22 @@
-# 'mall' 프로젝트
+# Node.js 버전
 
-`v14.20.1` 실행환경
+## `v14.20.1` 실행환경 프로젝트(/apps/\*)
 
-# 'cra-client', 'cra-server', 'design-system-storybook', 'nextjs-test', 'server-graphql', 'vuejs-test'
+- mall
 
-`v16.14.2` 실행환경
+## `v16.14.2` 실행환경 프로젝트(/apps/\*)
+
+- cra-client
+- cra-server
+- design-system-storybook
+- nextjs-test
+- server-graphql
+- vertical
+- vuejs-test
 
 ---
 
 https://nodejs.org/dist/v14.20.1/
-
-버전 중요!
 
 - Node.js v14.20.1 to /usr/local/bin/node
 - npm v6.14.17 to /usr/local/bin/npm

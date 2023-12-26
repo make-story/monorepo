@@ -1,6 +1,6 @@
 # CRA - Next.js 마이그레이션 테스트
 
-# 환경
+# 버전
 
 - Node.js v16.14.2
 - Next.js 13.4.3
