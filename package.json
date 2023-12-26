@@ -9,6 +9,7 @@
   "workspaces": {
     "packages": [
       "apps/*",
+      "micro/*",
       "packages/*"
     ],
     "nohoist": []
