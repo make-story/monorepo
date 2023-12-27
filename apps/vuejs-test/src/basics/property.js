@@ -7,7 +7,7 @@
 // computed 는 특정 값이 변했을 경우에만 재 렌더링, 값이 변하지 않으면 호출시 이전에 계산한 값을 바로 반환
 
 // watch / computed
-// https://kr.vuejs.org/v2/guide/computed.html
+// https://v2.ko.vuejs.org/v2/guide/computed.html
 // watch 속성은 감시할 데이터를 지정하고 그 데이터가 바뀌면 이런 함수를 실행하라는 방식 (소프트웨어 공학에서 이야기하는 ‘명령형 프로그래밍’ 방식)
 // computed 속성은 계산해야 하는 목표 데이터를 정의하는 방식 (소프트웨어 공학에서 이야기하는 ‘선언형 프로그래밍’ 방식)
 
@@ -93,10 +93,10 @@ export default {
     length: function (newVal, oldVal) {
       console.log(`이전 새로 길이: ${oldVal}, 새 세로 길이: ${newVal}`);
     },
-    width: function (newVal, oldVal) {
+    width(newVal, oldVal) {
       console.log(`이전 가로 길이: ${oldVal}, 새 가로 길이: ${newVal}`);
     },
-    area: function (newVal, oldVal) {
+    area(newVal, oldVal) {
       console.log(`이전 넓이: ${oldVal}, 새 넓이: ${newVal}`);
     },
   },
