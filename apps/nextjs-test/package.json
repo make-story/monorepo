@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-test",
+  "name": "@ysm/nextjs-test",
   "version": "1.0.0",
   "description": "## 환경 구축",
   "main": "index.js",

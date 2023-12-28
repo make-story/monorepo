@@ -2,7 +2,8 @@
  * React Context
  */
 import { createContext } from 'react';
+import { createApiManager } from '@ysm/common/apiManager/index';
 
-import { createApiManager } from '@makeapi/common/apiManager/index';
-
-export default createContext<{ APIs?: ReturnType<typeof createApiManager> }>({});
+export default createContext<{ APIs?: ReturnType<typeof createApiManager> }>(
+  {},
+);

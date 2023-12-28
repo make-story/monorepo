@@ -1,5 +1,5 @@
 {
-  "name": "vuejs-test",
+  "name": "@ysm/vuejs-test",
   "version": "0.1.0",
   "type": "module",
   "scripts": {

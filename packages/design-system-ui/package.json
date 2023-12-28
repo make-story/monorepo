@@ -1,5 +1,5 @@
 {
-  "name": "design-system-ui",
+  "name": "@ysm/design-system-ui",
   "version": "0.0.1",
   "scripts": {
     "prebuild": "rimraf lib && yarn build:icons && yarn build:logos && yarn build:images",

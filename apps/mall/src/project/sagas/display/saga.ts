@@ -15,9 +15,14 @@ https://github.com/redux-utilities/flux-standard-action
 */
 import { AnyAction } from '@reduxjs/toolkit';
 import { call, delay, put, takeEvery, takeLatest } from 'redux-saga/effects';
-
-import { loadingActionType, loadingActionCreator } from '@makeapi/common/stores/loading/action';
-import { displayActionType, displayActionCreator } from 'src/project/stores/display/action';
+import {
+  loadingActionType,
+  loadingActionCreator,
+} from '@ysm/common/stores/loading/action';
+import {
+  displayActionType,
+  displayActionCreator,
+} from 'src/project/stores/display/action';
 import * as api from 'src/project/api/display/index';
 import { IMainContentsNewOfTheMonth } from 'src/project/types/display/index';
 
@@ -31,7 +36,10 @@ function* fetchDisplay(action: AnyAction) {
 
   try {
     // call(비동기 실행함수, 함꼐 넘길 파라미터 값)
-    const data: IMainContentsNewOfTheMonth = yield call(api.getMainContentsNewOfTheMonth, action.payload);
+    const data: IMainContentsNewOfTheMonth = yield call(
+      api.getMainContentsNewOfTheMonth,
+      action.payload,
+    );
 
     // 디스패치
     yield put({
@@ -51,7 +59,9 @@ function* fetchDisplay(action: AnyAction) {
   }
 
   // 로딩 끝
-  yield put(loadingActionCreator.finishLoading(displayActionType.FETCH_DISPLAY));
+  yield put(
+    loadingActionCreator.finishLoading(displayActionType.FETCH_DISPLAY),
+  );
 }
 
 // Saga 미들웨어 - 액션타입 등록

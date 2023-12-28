@@ -1,3 +1,3 @@
-import '@makeapi/common';
+import '@ysm/common';
 
 declare module 'react-reveal/Fade';

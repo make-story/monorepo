@@ -3,9 +3,8 @@
  */
 import React, { PropsWithChildren, useMemo } from 'react';
 import { Store } from '@reduxjs/toolkit';
-
-import { createApiManager } from '@makeapi/common/apiManager/index';
-import APIContext from '@makeapi/common/apiManager/contexts/APIContext';
+import { createApiManager } from '@ysm/common/apiManager/index';
+import APIContext from '@ysm/common/apiManager/contexts/APIContext';
 
 type APIProviderProps = { store: Store };
 

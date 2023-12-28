@@ -1,8 +1,8 @@
 /**
  * axios config 관련 코드
  */
-import { apiDomain } from '@makeapi/common/config';
-import { IApiParams } from '@makeapi/common/apiManager/types';
+import { apiDomain } from '@ysm/common/config';
+import { IApiParams } from '@ysm/common/apiManager/types';
 
 // 각 API별 구분 값
 export const API_TYPE = {
@@ -23,7 +23,10 @@ const axiosDefaults = {
 };
 
 // 각 영역별 설정 값 반환
-export const getAxiosConfig = (type: string, { config = {}, store = null, state = null }: IApiParams) => {
+export const getAxiosConfig = (
+  type: string,
+  { config = {}, store = null, state = null }: IApiParams,
+) => {
   // 기본값
   config = {
     ...axiosDefaults,

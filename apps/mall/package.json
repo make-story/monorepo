@@ -1,5 +1,5 @@
 {
-  "name": "@makeapi/mall",
+  "name": "@ysm/mall",
   "private": true,
   "packageManager": "yarn@3.1.1",
   "version": "1.0.0",
@@ -120,6 +120,6 @@
     "query-string": "7.1.1"
   },
   "devDependencies": {
-    "@makeapi/common": "*"
+    "@ysm/common": "*"
   }
 }

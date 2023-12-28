@@ -9,10 +9,13 @@
  * return axiosConfig; 꼭 해주여야 한다.
  */
 import axios from 'axios';
-
-import { AXIOS_ERROR_CODE } from '@makeapi/common/const/error';
-import { API_TYPE, getAxiosConfig } from '@makeapi/common/apiManager/config';
-import { TInterceptor, IApiParams, IApiConfig } from '@makeapi/common/apiManager/types';
+import { AXIOS_ERROR_CODE } from '@ysm/common/const/error';
+import { API_TYPE, getAxiosConfig } from '@ysm/common/apiManager/config';
+import {
+  TInterceptor,
+  IApiParams,
+  IApiConfig,
+} from '@ysm/common/apiManager/types';
 
 /**
  * 로그
@@ -20,7 +23,10 @@ import { TInterceptor, IApiParams, IApiConfig } from '@makeapi/common/apiManager
  * @param params : 옵션
  * @returns
  */
-export const setErrorLoggerInterceptorResponse: TInterceptor = (instance, params: IApiParams = {}) => {
+export const setErrorLoggerInterceptorResponse: TInterceptor = (
+  instance,
+  params: IApiParams = {},
+) => {
   //console.log('setErrorLoggerInterceptorResponse');
 
   instance.interceptors.response.use(
@@ -34,8 +40,14 @@ export const setErrorLoggerInterceptorResponse: TInterceptor = (instance, params
             const method = error.config.method?.toUpperCase() || '';
             const url =
               (error.config.baseURL || '') +
-              (error.config.url ? (error.config.url.charAt(0) !== '/' ? '/' : '' + error.config.url) : '');
-            message = message.concat(`, "${[method, url, error.config.data].join(' ').trim()}"`);
+              (error.config.url
+                ? error.config.url.charAt(0) !== '/'
+                  ? '/'
+                  : '' + error.config.url
+                : '');
+            message = message.concat(
+              `, "${[method, url, error.config.data].join(' ').trim()}"`,
+            );
           }
 
           if (error.response?.data) {
@@ -93,7 +105,10 @@ export const setAxiosConfigInterceptorRequest: TInterceptor = (
 /**
  * 통합인증 토큰 (쿠키검사)
  */
-export const setTokenInterceptorRequest: TInterceptor = (instance, { payload = {}, store = null }: IApiParams = {}) => {
+export const setTokenInterceptorRequest: TInterceptor = (
+  instance,
+  { payload = {}, store = null }: IApiParams = {},
+) => {
   //console.log('setTokenInterceptorRequest');
 
   // 필수값 확인
@@ -115,7 +130,12 @@ export const setTokenInterceptorRequest: TInterceptor = (instance, { payload = {
  */
 export const setTokenInterceptorResponse: TInterceptor = (
   instance,
-  { payload = {}, store = null, state = null, dispatch = null }: IApiParams = {},
+  {
+    payload = {},
+    store = null,
+    state = null,
+    dispatch = null,
+  }: IApiParams = {},
 ) => {
   // 필수값 확인
   if (!store) {

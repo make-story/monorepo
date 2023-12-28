@@ -1,9 +1,14 @@
 import { configureStore, Reducer } from '@reduxjs/toolkit';
 import createSagaMiddleware, { Task } from 'redux-saga';
-import { createWrapper, Context, _GetServersidePropsCallback, GetServerSidePropsContext } from 'next-redux-wrapper';
+import {
+  createWrapper,
+  Context,
+  _GetServersidePropsCallback,
+  GetServerSidePropsContext,
+} from 'next-redux-wrapper';
+import createApiManagerServerSide from '@ysm/common/apiManager/serverSide';
+import { injectAxiosMiddleware } from '@ysm/common/apiManager/reduxMiddlewares';
 
-import createApiManagerServerSide from '@makeapi/common/apiManager/serverSide';
-import { injectAxiosMiddleware } from '@makeapi/common/apiManager/reduxMiddlewares';
 import rootReducer, { TypedRootState } from './rootReducer';
 import rootSaga from './rootSaga';
 
@@ -69,7 +74,10 @@ const createWrapperWithCommonLogic = () => {
     deserializeState: state => JSON.parse(state),
   });
 
-  const getServerSideProps = <P extends {} = any, Strict extends boolean = false>(
+  const getServerSideProps = <
+    P extends {} = any,
+    Strict extends boolean = false
+  >(
     callback: _GetServersidePropsCallback<AppStore, P, Strict>,
   ) => {
     return wrapper.getServerSideProps(store => async _context => {

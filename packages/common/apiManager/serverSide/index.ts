@@ -1,7 +1,7 @@
 /**
  * apiManager 서버서이드 사용 방법
  */
-import { createApiManager, TApiManager } from '@makeapi/common/apiManager';
+import { createApiManager, TApiManager } from '@ysm/common/apiManager';
 
 export default async function createApiManagerServerSide(context: any) {
   const { store, req, res, params, query } = context;

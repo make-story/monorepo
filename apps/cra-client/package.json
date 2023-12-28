@@ -1,5 +1,5 @@
 {
-  "name": "cra-client",
+  "name": "@ysm/cra-client",
   "version": "0.1.0",
   "private": true,
   "scripts": {

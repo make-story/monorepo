@@ -1,8 +1,7 @@
 // @index('./**/*.ts', f => `export { default as ${f.name} } from '${f.path}';`)
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Middleware } from '@reduxjs/toolkit';
-
-import { createApiManager, TApiManager } from '@makeapi/common/apiManager';
+import { createApiManager, TApiManager } from '@ysm/common/apiManager';
 
 /**
  * Redux Action Payload로 Axios Instance를 추가하는 미들웨어

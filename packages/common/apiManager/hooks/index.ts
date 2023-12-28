@@ -3,9 +3,8 @@
  */
 import React, { useMemo, useContext, useEffect } from 'react';
 import { ReactReduxContext, useDispatch, useSelector } from 'react-redux';
-
-import APIContext from '@makeapi/common/apiManager/contexts/APIContext';
-import { TRootStateCommon } from '@makeapi/common/reducer';
+import APIContext from '@ysm/common/apiManager/contexts/APIContext';
+import { TRootStateCommon } from '@ysm/common/reducer';
 
 export default function useApiManager() {
   const { APIs } = useContext(APIContext);

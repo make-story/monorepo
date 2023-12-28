@@ -3,7 +3,6 @@ const fs = require('fs');
 const path = require('path');
 const http = require('http');
 const https = require('https');
-
 const express = require('express');
 const next = require('next');
 const helmet = require('helmet');
@@ -11,15 +10,13 @@ const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const dotenv = require('dotenv');
 const moment = require('moment-timezone');
-
 const cors = require('cors');
 const AWSXRay = require('aws-xray-sdk');
 const UAParser = require('ua-parser-js');
-
 const { createServer } = require('http');
 const { parse } = require('url');
 
-//const { TEST } = require('@makeapi/nodejs');
+//const { TEST } = require('@ysm/nodejs');
 //console.log('TEST', TEST);
 
 // node 예외처리

@@ -1,5 +1,5 @@
 {
-  "name": "server-json",
+  "name": "@ysm/server-json",
   "version": "1.0.0",
   "description": "json-server",
   "main": "index.js",

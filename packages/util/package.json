@@ -1,5 +1,5 @@
 {
-  "name": "@makeapi/util",
+  "name": "@ysm/util",
   "version": "1.0.0",
   "description": "프로젝트 공통 유틸",
   "main": "index.js",

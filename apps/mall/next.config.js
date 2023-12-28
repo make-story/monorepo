@@ -1,7 +1,7 @@
 const path = require('path');
 const dotenv = require('dotenv');
 const withPlugins = require('next-compose-plugins');
-const withTM = require('next-transpile-modules')(['@makeapi/common']);
+const withTM = require('next-transpile-modules')(['@ysm/common']);
 
 const isDev = process.env.NODE_ENV === 'development';
 //dotenv.config({ path: path.join(__dirname, `.envs/.env.${process.env.NODE_ENV}`), silent: true });
@@ -12,7 +12,10 @@ const config = {
   publicRuntimeConfig: {},
   serverRuntimeConfig: {},
   // 웹팩설정
-  webpack: (config, { buildId, dev, isServer, defaultLoaders, nextRuntime, webpack }) => {
+  webpack: (
+    config,
+    { buildId, dev, isServer, defaultLoaders, nextRuntime, webpack },
+  ) => {
     //console.log('webpack mode', config.mode); // process.env.NODE_ENV 값에 따라 설정됨
     //console.log('webpack filename', config.output.filename);
 
@@ -53,7 +56,7 @@ const config = {
   // 외부 종속성 트랜스파일
   // Next.js 13 버전 이하의 경우 'transpilePackages' 설정이 아닌, 'next-transpile-modules' NPM 패키지 활용해야 한다.
   // https://nextjs.org/docs/app/api-reference/next-config-js/transpilePackages
-  //transpilePackages: ['@makeapi/common'],
+  //transpilePackages: ['@ysm/common'],
   // 리다이렉트
   // https://nextjs.org/docs/api-reference/next.config.js/redirects
   /*async redirects() {

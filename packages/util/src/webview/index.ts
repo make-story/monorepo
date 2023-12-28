@@ -33,7 +33,7 @@ if (typeof window !== 'undefined') {
  * 앱 -> 웹뷰 : 이벤트 on / 이벤트 off
  */
 /*
-import { APP_EVENT_TYPE, appEventOn, appEventOff } from '@makeapi/util/webview';
+import { APP_EVENT_TYPE, appEventOn, appEventOff } from '@ysm/util/webview';
 
 // 이벤트 리스너
 const listener = ({ detail }: any) => {

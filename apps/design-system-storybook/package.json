@@ -1,5 +1,5 @@
 {
-  "name": "design-system-storybook",
+  "name": "@ysm/design-system-storybook",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -9,7 +9,7 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "design-system-ui": "*",
+    "@ysm/design-system-ui": "*",
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.8.1",
     "@types/react": "^18.0.8",
