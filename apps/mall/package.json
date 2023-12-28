@@ -12,7 +12,7 @@
     "predev": "node -e \"if(process.versions.node.split('.').shift() !== '14') throw new Error('Node.js 버전 확인 필요!')\"",
     "typecheck": "tsc --project ./tsconfig.json --noEmit",
     "lint": "eslint . --ext .ts,.tsx,.js,.jsx,.cjs,.mjs,.mdx,.graphql",
-    "dev": "cross-env NODE_ENV=${NODE_ENV:=development} PORT=80 PORT_SSL=443 node --inspect=9191 server.js",
+    "dev": "cross-env NODE_ENV=${NODE_ENV:=development} PORT=8000 PORT_SSL=443 node --inspect=9191 server.js",
     "build": "cross-env next build"
   },
   "dependencies": {

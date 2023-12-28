@@ -9,12 +9,10 @@ import { initialState as testInit } from '@ysm/common/stores/test/reducer';
 import loading from '@ysm/common/stores/loading/reducer';
 import test from '@ysm/common/stores/test/reducer';
 
+// display
 import display, {
   initialState as displayInit,
 } from './project/stores/display/reducer';
-
-// display
-import display from './project/stores/display/reducer';
 
 /** Redux Root State */
 type TRootState = ReturnType<typeof reducers>;
