@@ -81,5 +81,8 @@
     "tsconfig-paths-webpack-plugin": "^4.1.0"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "engines": {
+    "node": "16.14.2"
+  }
 }

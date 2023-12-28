@@ -121,5 +121,8 @@
   },
   "devDependencies": {
     "@ysm/common": "*"
+  },
+  "engines": {
+    "node": "14.20.1"
   }
 }

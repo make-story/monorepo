@@ -74,5 +74,8 @@
     "prettier": "^2.6.0",
     "source-map-loader": "^4.0.1"
   },
-  "proxy": "http://localhost:9030"
+  "proxy": "http://localhost:9030",
+  "engines": {
+    "node": "16.14.2"
+  }
 }
