@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 /*
 -
 로깅 라이브러리
@@ -40,16 +41,17 @@ const LOG_LEVEL = {
 type TLogLevel = (typeof LOG_LEVEL)[keyof typeof LOG_LEVEL];
 type TAnyFunction = (...payload: any[]) => any;
 
-const getListFindRemoveItem = (
+const getListFindItem = (
   list: any[] = [],
   findFunction: TAnyFunction = () => {},
+  { isFindItemRemove }: { isFindItemRemove?: boolean } = {},
 ) => {
   const index = list.findIndex(findFunction);
   let result = null;
 
   if (-1 < index) {
     result = list[index]; // 조건에 따라 검색된 값
-    list.splice(index, 1); // 검색된 값 배열에서 제거
+    isFindItemRemove && list.splice(index, 1); // 검색된 값 배열에서 제거
   }
 
   return result;
@@ -60,27 +62,36 @@ const findLogFunction = (item: any) => typeof item === 'function';
 /**
  * logger 전용 커링 함수
  */
-function curry(callback: TAnyFunction) {
-  let level: TLogLevel | null = null;
-  let logFunction: TAnyFunction | null = null;
-
-  return function curried(...args: any) {
-    level = getListFindRemoveItem(args, findLevel) || level;
-    logFunction = getListFindRemoveItem(args, findLogFunction) || logFunction;
+function curry(callback: TAnyFunction): any {
+  // 이 부분에 클로저 변수를 선언하면, curry 하려는 모든 callback 함수에 해당 변수가 글로벌하게 작동한다.
+  /*
+  const logger = curry(() => {});
+  const test1 = logger('TEST1');
+  const test2 = logger('TEST2');
+  test1, test2 모두 같은 클로저 변수를 바라보기 때문에, 의도한대로 코드가 작동안할 수 있음 
+  */
+  return function curried(
+    this: { level?: TLogLevel | null; logFunction?: TAnyFunction | null },
+    ...args: any[]
+  ): any {
+    const level: TLogLevel | null =
+      this?.level ||
+      getListFindItem(args, findLevel, { isFindItemRemove: true });
+    const logFunction: TAnyFunction | null =
+      this?.logFunction ||
+      getListFindItem(args, findLogFunction, { isFindItemRemove: true });
 
     if (
-      callback.length <= args.length ||
+      /*callback.length <= args.length ||*/
       (level && 1 <= args.length) ||
       (logFunction && 1 <= args.length) ||
       (!level && !logFunction && args.length === 1)
     ) {
-      const result = callback?.apply(null, [level, logFunction, ...args]);
-      level = null;
-      logFunction = null;
-      return result;
+      return callback?.apply(null, [level, logFunction, ...args]);
     }
 
-    return (...moreArgs: any) => curried.apply(null, args.concat(moreArgs));
+    return (...moreArgs: any[]): any =>
+      curried.apply({ level, logFunction }, args.concat(moreArgs));
   };
 }
 
@@ -124,5 +135,9 @@ const logger = curry(
     return logFunction(level, ...payload);
   },
 );
+logger.error = logger(LOG_LEVEL.ERROR);
+logger.warn = logger(LOG_LEVEL.WARN);
+logger.info = logger(LOG_LEVEL.INFO);
+logger.debug = logger(LOG_LEVEL.DEBUG);
 
 export { LOG_LEVEL, logger };
