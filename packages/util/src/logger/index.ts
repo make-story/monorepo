@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-empty-function */
 /*
 -
 로깅 라이브러리
