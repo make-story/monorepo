@@ -9,6 +9,8 @@ const state = {
 // 모든 Vue 게터(getters)를 가집니다.
 // 특정 state 값을 반환하거나, state 를 가공한 값을 반환
 // state 값을 가져와 여러 컴포넌트에서 동일한 가공을 해야할 때, 가공로직 공통화 할 수 있음
+// https://vuex.vuejs.org/guide/getters.html#property-style-access
+// Vue 컴포넌트에서 this.$store.getters.XXX 를 통해 접근 가능 (this.$store 는 Vuex 기본 제공 변수)
 const getters = {
   getTest: (state, getters, rootState) => state.test,
   getMsg: (state, getters, rootState) => state.message,
