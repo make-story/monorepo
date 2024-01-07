@@ -80,6 +80,7 @@ function curry(callback: TAnyFunction): any {
       this?.logFunction ||
       getListFindItem(args, findLogFunction, { isFindItemRemove: true });
 
+    // 최종 조건 만족시 콜백 함수 실행
     if (
       /*callback.length <= args.length ||*/
       (level && 1 <= args.length) ||
@@ -89,6 +90,7 @@ function curry(callback: TAnyFunction): any {
       return callback?.apply(null, [level, logFunction, ...args]);
     }
 
+    // 클로저 함수
     return (...moreArgs: any[]): any =>
       curried.apply({ level, logFunction }, args.concat(moreArgs));
   };

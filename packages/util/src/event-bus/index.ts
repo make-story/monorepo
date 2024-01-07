@@ -14,21 +14,21 @@ export default class EventBus {
   /**
    * Add an event listener.
    */
-  addEventListener(event: string, callback: (payload: any) => any) {
+  addEventListener(event: string, callback: (payload: any) => any): void {
     this.bus.addEventListener(event, callback);
   }
 
   /**
    * Remove an event listener.
    */
-  removeEventListener(event: string, callback: (payload: any) => any) {
+  removeEventListener(event: string, callback: (payload: any) => any): void {
     this.bus.removeEventListener(event, callback);
   }
 
   /**
    * Dispatch an event.
    */
-  dispatchEvent(event: string, detail = {}) {
+  dispatchEvent(event: string, detail = {}): void {
     this.bus.dispatchEvent(new CustomEvent(event, { detail }));
   }
 }
