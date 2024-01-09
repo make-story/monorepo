@@ -50,6 +50,31 @@ const actions = {
   callMutation: ({ state, commit, rootState }) => {
     console.log('actions > callMutation', rootState);
   },
+  /**
+   * API 호출 예
+   */
+  //store.dispatch('actionAPI1').then(() => {})
+  actionAPI1({ commit }) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        //commit('someMutation');
+        resolve();
+      }, 1000);
+    });
+  },
+  //store.dispatch('actionAPI2').then(() => {})
+  actionAPI2({ dispatch, commit }) {
+    return dispatch('actionAPI1').then(() => {
+      //commit('someOtherMutation')
+    });
+  },
+  async actionAPI3({ commit }) {
+    //commit('gotData', await getData())
+  },
+  async actionAPI4({ dispatch, commit }) {
+    await dispatch('actionAPI1'); // wait for `actionA` to finish
+    //commit('gotOtherData', await getOtherData())
+  },
 };
 
 // 모든 Vuex 뮤테이션을 가집니다.
