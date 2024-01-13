@@ -30,18 +30,7 @@ import {
 //import { composeWithDevTools } from 'redux-devtools-extension'; // redux-toolkit 을 사용할 경우, 더 이상 사용하지 않음 - https://redux-toolkit.js.org/api/configureStore#devtools
 import logger from 'redux-logger';
 
-import common from '@/common/store/index';
-import project1 from '@/project1/store/index';
-import project2 from '@/project2/store/index';
-
-/**
- * 각각의 reducer 를 하나로 합쳐준다.
- */
-const reducer = combineReducers({
-  common,
-  //project1,
-  project2,
-});
+import { reducer, persistReducerList } from '@/reducer';
 
 /**
  * HYDRATE
@@ -120,8 +109,8 @@ const makeStore: MakeStore<any> = (context: Context) => {
         key: 'root',
         version: 1,
         storage,
-        whitelist: ['common'], // reducer 중 스토리지에 저장할 것
-        blacklist: [], // reducer 중 스토리지 저장에 제외할 것
+        whitelist: persistReducerList.whitelist, // reducer 중 스토리지에 저장할 것
+        blacklist: persistReducerList.blacklist, // reducer 중 스토리지 저장에 제외할 것
       },
       rootReducer,
     );

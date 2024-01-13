@@ -5,9 +5,27 @@
 - Node.js v16.14.2
 - Next.js 13.4.3
 
-# 기존 환경에서 업데이트 하는 것이 아닌, 코드를 Next.js 환경으로 옮겨오는 방식
+# Next.js 전환 이유
+
+기존 환경에서 업데이트 하는 것이 아닌, 코드를 Next.js 환경으로 옮겨오는 방식
 
 시간이 지남에 따라, 대응이 안된 코드와 대응이 된 코드 구분이 어려워지기 때문
+
+# Next.js 예제 (redux, next-auth, styled-components, apollo, graphql, docker-compose 등)
+
+`https://github.com/vercel/next.js/tree/canary/examples`
+
+https://github.com/vercel/next.js/tree/canary/examples/auth
+
+https://github.com/vercel/next.js/tree/canary/examples/with-styled-components
+
+https://github.com/vercel/next.js/tree/canary/examples/with-apollo
+
+https://github.com/vercel/next.js/tree/canary/examples/with-typescript-graphql
+
+https://github.com/vercel/next.js/tree/canary/examples/with-storybook
+
+https://github.com/vercel/next.js/tree/canary/examples/with-docker-compose
 
 ---
 
