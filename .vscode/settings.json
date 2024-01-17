@@ -7,15 +7,7 @@
   },
   "eslint.enable": true,
   "eslint.quiet": true,
-  "eslint.validate": [
-    "javascript",
-    "typescript",
-    "javascriptreact",
-    "typescriptreact",
-    "vue",
-    "html"
-  ],
   "prettier.enableDebugLogs": true,
   "prettier.requireConfig": true,
-  "json.schemas": []
+  "prettier.configPath": ".prettierrc.js"
 }

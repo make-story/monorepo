@@ -1,5 +1,6 @@
 /**
  * ISR을 통한 페이지 구현
+ * '실전 웹 애플리케이션 개발' 책 참고
  */
 import { GetStaticPaths, NextPage, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
