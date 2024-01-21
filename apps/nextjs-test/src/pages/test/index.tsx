@@ -3,12 +3,14 @@ import { GetServerSidePropsContext, GetStaticPropsContext } from 'next';
 
 import ReRenderTestContainer from '@/test/component/test/ReRenderTestContainer';
 
+// 상위 컴포넌트 변경에 따른 하위 컴포넌트 테스트
 const ChildComponent = () => {
   console.log('ChildComponent is rendering!');
   return <div>Hello World!</div>;
 };
 const ChildComponentMemo = React.memo(ChildComponent);
 
+// 상위 컴포넌트 변경에 따른 하위 컴포넌트 + props 테스트
 const ChildComponentProps = ({
   onClick,
 }: PropsWithChildren<{ onClick: any }>) => {
@@ -17,14 +19,17 @@ const ChildComponentProps = ({
 };
 const ChildComponentPropsMemo = React.memo(ChildComponentProps);
 
+// 상위 컴포넌트 내부 자식 컴포넌트를 선언방식으로 했을 경우
 const ParentComponent = () => {
   console.log('ParentComponent is rendering!');
   const [toggle, setToggle] = useState(false);
 
   return (
     <div>
-      {/* React.memo 사용하여 리렌더 방지 */}
+      {/* React.memo 사용하여 리렌더 방지!! */}
+      {/* (ChildComponent 의 상위 컴포넌트 ParentComponent 상태 변경이 일어 났지만,React.memo 사용하여 자식 컴포넌트 리렌더 방지) */}
       <ChildComponentMemo />
+      {/*<ChildComponent />*/}
       <button
         onClick={() => {
           setToggle(!toggle);
@@ -36,6 +41,7 @@ const ParentComponent = () => {
   );
 };
 
+// 상위 컴포넌트 내부 자식 컴포넌트는 children 으로 받았을 경우
 const ParentComponentChildren = ({ children }: PropsWithChildren) => {
   console.log('ParentComponent is rendering!');
   const [toggle, setToggle] = useState(false);
@@ -55,6 +61,7 @@ const ParentComponentChildren = ({ children }: PropsWithChildren) => {
   );
 };
 
+// 상위 컴포넌트 내부 자식 컴포넌트에게 props 를 전달했을 경우
 const ParentComponentProps = () => {
   console.log('ParentComponent is rendering!');
   const [toggle, setToggle] = useState(false);
@@ -64,9 +71,10 @@ const ParentComponentProps = () => {
 
   return (
     <div>
-      {/*<ChildComponentPropsMemo onClick={() => console.log('Click!!!')} />*/}
-      {/* useCallback 사용하여 리렌더 방지!!!!! */}
+      {/* useCallback + React.memo 사용하여 리렌더 방지!! */}
+      {/* (ChildComponentProps 의 상위 컴포넌트 ParentComponentProps 상태변경으로 prps 로 넘기는 함수도 재생성이 일어나야 하지만 useCallback 으로 재생성을 방지) */}
       <ChildComponentPropsMemo onClick={onClick} />
+      {/*<ChildComponentPropsMemo onClick={() => console.log('Click!!!')} />*/}
       <button
         onClick={() => {
           setToggle(!toggle);
@@ -78,6 +86,7 @@ const ParentComponentProps = () => {
   );
 };
 
+// 리렌더할 때 Porps 로 넘기는 값이 변하는지 여부
 const ParentComponentValue = ({
   value,
 }: PropsWithChildren<{ value: number }>) => {
