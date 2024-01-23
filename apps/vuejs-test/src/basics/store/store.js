@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import createPersistedState from "vuex-persistedstate";
+//import createPersistedState from "vuex-persistedstate";
 
 import products from './modules/products';
 
@@ -15,11 +15,11 @@ export const store = new Vuex.Store({
     products,
   },
   plugins: [
-    createPersistedState({
+    /*createPersistedState({
       storage: window.sessionStorage,
       paths: ["common"]
-    })
-  ]
+    })*/
+  ],
 });
 
 /*

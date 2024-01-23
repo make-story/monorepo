@@ -133,6 +133,7 @@ const actions = {
 const mutations = {
   increment(state, payload) {
     console.log('mutations > increment', payload);
+    state.test.data = payload;
   },
   SET_STORE(state /* Vuex 상태값 */, payload /* 사용자 데이터 */) {
     state.test = payload;
