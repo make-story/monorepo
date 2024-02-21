@@ -3,6 +3,7 @@ import Vuex from 'vuex';
 //import createPersistedState from "vuex-persistedstate";
 
 import products from './modules/products';
+import popup from './modules/popup';
 
 Vue.use(Vuex);
 
@@ -13,6 +14,7 @@ Vue.use(Vuex);
 export const store = new Vuex.Store({
   modules: {
     products,
+    popup,
   },
   plugins: [
     /*createPersistedState({
