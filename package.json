@@ -25,13 +25,8 @@
     "packages:lint": "yarn workspaces --include '@ysm/*' run lint",
     "packages:typecheck": "yarn workspaces --include '@ysm/*' run typecheck",
     "mall": "yarn workspace @ysm/mall",
-    "nextjs-test": "yarn workspace @ysm/nextjs-test",
-    "vuejs-test": "yarn workspace @ysm/vuejs-test",
-    "server-graphql": "yarn workspace @ysm/server-graphql",
     "server-json": "yarn workspace @ysm/server-json",
-    "cra-server": "yarn workspace @ysm/cra-server",
-    "cra-client": "yarn workspace @ysm/cra-client",
-    "local": "concurrently \"yarn server-graphql server\" \"yarn cra-server start\" \"yarn cra-client start\""
+    "local": "concurrently \"yarn mall dev\" \"yarn server-json server\""
   },
   "dependencies": {
     "@babel/core": "7.12.10",
@@ -58,5 +53,8 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "prettier": "^2.5.1",
     "turbo": "^1.6.3"
+  },
+  "engines": {
+    "node": "14.20.1"
   }
 }

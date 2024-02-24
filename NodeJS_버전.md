@@ -1,20 +1,6 @@
 # Node.js 버전
 
-## `v14.20.1` 실행환경 프로젝트(/apps/\*)
-
-- mall
-
-## `v16.14.2` 실행환경 프로젝트(/apps/\*)
-
-- cra-client
-- cra-server
-- design-system-storybook
-- nextjs-test
-- server-graphql
-- vertical
-- vuejs-test
-
----
+`v14.20.1` 실행환경
 
 https://nodejs.org/dist/v14.20.1/
 
