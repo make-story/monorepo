@@ -1,15 +1,11 @@
 import _ from 'lodash';
 import { combineReducers, AnyAction } from '@reduxjs/toolkit';
 import { HYDRATE } from 'next-redux-wrapper';
-
-// 각 영역 상태 초기값
-import { initialState as testInit } from '@ysm/common/stores/test/reducer';
-
-// common
+import test, {
+  initialState as testInit,
+} from '@ysm/common/stores/test/reducer';
 import loading from '@ysm/common/stores/loading/reducer';
-import test from '@ysm/common/stores/test/reducer';
 
-// display
 import display, {
   initialState as displayInit,
 } from './project/stores/display/reducer';

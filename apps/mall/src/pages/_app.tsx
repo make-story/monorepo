@@ -12,7 +12,10 @@ import { APIProvider } from '@ysm/common/apiManager/contexts';
 import { RootState } from 'src/rootReducer';
 
 // https://nextjs.org/docs/basic-features/typescript#custom-app
-const App: NextComponentType<AppContext, AppInitialProps, AppProps> = ({ Component, pageProps }) => {
+const App: NextComponentType<AppContext, AppInitialProps, AppProps> = ({
+  Component,
+  pageProps,
+}: AppProps) => {
   const store = useStore();
 
   // <Component /> 타입 에러가 발생하는 경우, package.json 등 버전이 맞지 않다는 것이다.

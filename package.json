@@ -1,18 +1,30 @@
 {
   "name": "@ysm/monorepo",
   "private": true,
-  "packageManager": "yarn@3.1.1",
+  "packageManager": "yarn@1.22.19",
   "version": "1.0.0",
-  "description": "모노레포",
+  "description": "nohoist 사용을 위해서는 yarn 1.4.2 이상 필요 / 모노레포",
   "main": "index.js",
   "author": "Sung-min Yu <yu9221@gmail.com>",
   "workspaces": {
     "packages": [
       "apps/*",
-      "micro/*",
       "packages/*"
     ],
-    "nohoist": []
+    "nohoist": [
+      "@types",
+      "@types/**",
+      "**/@types/**",
+      "next",
+      "next/**",
+      "**/next/**",
+      "react",
+      "react/**",
+      "**/react/**",
+      "react-dom",
+      "react-dom/**",
+      "**/react-dom"
+    ]
   },
   "scripts": {
     "echo": "$ yarn <프로젝트명> <해당 프로젝트 package.json 파일 scripts 항목에 설정된 명령>",

@@ -1,6 +1,6 @@
 {
   "name": "@ysm/common",
-  "packageManager": "yarn@3.1.1",
+  "packageManager": "yarn@1.22.19",
   "version": "1.0.0",
   "description": "프로젝트 공통 코드",
   "main": "index.js",
@@ -60,9 +60,9 @@
   },
   "devDependencies": {},
   "peerDependencies": {
-    "@reduxjs/toolkit": "^1.8.3",
+    "@reduxjs/toolkit": "1.8.3",
     "next": "10.0.7",
-    "next-redux-wrapper": "^7.0.5",
+    "next-redux-wrapper": "7.0.5",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-redux": "7.2.8"

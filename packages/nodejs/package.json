@@ -1,6 +1,6 @@
 {
   "name": "@ysm/nodejs",
-  "packageManager": "yarn@3.1.1",
+  "packageManager": "yarn@1.22.19",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
