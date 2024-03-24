@@ -24,8 +24,6 @@
     "@types/js-sha512": "0.8.0",
     "@types/lodash": "4.14.166",
     "@types/node": "^14.14.43",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.8",
     "@types/styled-components": "^5.1.7",
     "@types/ua-parser-js": "^0.7.36",
     "@types/winston": "^2.4.4",
@@ -60,6 +58,9 @@
   },
   "devDependencies": {},
   "peerDependencies": {
+    "@types/react": "17.0.0",
+    "@types/react-dom": "17.0.8",
+    "@types/react-redux": "7.1.25",
     "@reduxjs/toolkit": "1.8.3",
     "next": "10.0.7",
     "next-redux-wrapper": "7.0.5",

@@ -19,18 +19,12 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "esnext",
-    "allowSyntheticDefaultImports": true,
     "paths": {
       "@/*": ["./src/*"],
       "src/*": ["./src/*"]
-    }
+    },
+    "allowSyntheticDefaultImports": true
   },
-  "exclude": [
-    "node_modules",
-    ".next",
-    "_next",
-    "public",
-    "../../packages/common/utils/cipher"
-  ],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+  "exclude": ["node_modules"],
+  "include": ["**/*.ts", "**/*.tsx", "**/*.d.ts", ".next/types/**/*.ts"]
 }
