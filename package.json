@@ -12,18 +12,7 @@
       "packages/*"
     ],
     "nohoist": [
-      "@types",
-      "@types/**",
-      "**/@types/**",
-      "next",
-      "next/**",
-      "**/next/**",
-      "react",
-      "react/**",
-      "**/react/**",
-      "react-dom",
-      "react-dom/**",
-      "**/react-dom"
+      "**/mall/**"
     ]
   },
   "scripts": {

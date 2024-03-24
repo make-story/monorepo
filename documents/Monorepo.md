@@ -1,3 +1,5 @@
+`study.git/아키텍처_설계_전략/프로젝트_저장소_구성_기법/모노레포_구축.md` 참고!
+
 # NPM 공식 Monorepos
 
 https://blog.npmjs.org/post/186494959890/monorepos-and-npm.html
@@ -382,44 +384,8 @@ root 의 node_modules 폴더에 react 패키지가 설치된 것을 볼 수 있�
 
 ## 모든 패키지가 yarn workspaces 의 호이스팅 방식을 지원하는 것은 아님
 
-- can’t find module “B@2.0” from project root “monorepo” (not able to follow symlink)
-- can’t find module “A@1.0” from “package-1” (unaware of the module tree above in “monorepo”)
-
-이를 해결하기 위해서는 nohoist를 사용  
 nohoist 항목에 추가된 패키지는 호이스팅 되지 않고 각각의 프로젝트 또는 패키지의 node_modules에 추가
 `nohoist 를 이용하면, 각 프로젝트의 의존성 모듈을 프로젝트 내 각 로컬 node_modules 에 설치`
-
-### nohoist 테스트를 위하여 react-router-dom 패키지를 호이스팅되지 않게 추가
-
-root package.json 에 다음과 같이 nohoist 항목을 추가
-
-```javascript
-{
-  "name": "@monorepo",
-  "version": "1.0.0",
-  "main": "index.js",
-  "author": "",
-  "license": "MIT",
-  "private": true,
-  "workspaces": {
-    "packages": [
-      "packages/**"
-    ],
-    "nohoist": [
-      "**/react-router-dom",
-      "**/react-router-dom/**"
-    ]
-  }
-}
-```
-
-pack-a에 react-router-dom 패키지를 추가
-
-```
-$ yarn workspace pack-a add react-router-dom
-```
-
-pack-a에 node_modules 디렉토리가 생기며 안에 react-router-dom 패키지가 있는 것 을 확인
 
 ---
 
