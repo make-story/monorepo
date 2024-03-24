@@ -3,13 +3,12 @@
  * https://eslint.org/docs/latest/rules/
  *
  * $ yarn add eslint
- * $ yarn add @typescript-eslint/eslint-plugin @typescript-eslint/parser
- * $ yarn add eslint-config-next
  *
  * ESLint 와 Prettier 충돌 해결
- * eslint-config-prettier : eslint에서 prettier와 겹치는 포매팅룰을 삭제합니다.
- * eslint-plugin-prettier : eslint에 prettier의 포매팅 기능을 추가합니다.
- * eslint-config-pretteir로 eslint의 원래 포매팅 기능을 없애버리고, eslint-plugin-prettier로 prettier의 포매팅 기능을 사용합니다.
+ * https://prettier.io/docs/en/integrating-with-linters.html
+ * eslint-config-prettier : eslint 에서 prettier 와 겹치는 포매팅룰을 삭제합니다.
+ * eslint-plugin-prettier : eslint 에 prettier 의 포매팅 기능을 추가합니다.
+ * eslint-config-prettier 로 eslint의 원래 포매팅 기능을 없애버리고, eslint-plugin-prettier 로 prettier의 포매팅 기능을 사용합니다.
  *
  * 'eslint-config-next' 포함된 패키지
  * https://github.com/vercel/next.js/blob/canary/packages/eslint-config-next/package.json
